@@ -7,11 +7,12 @@ import {
   FRIENDS_POST_FAILURE,
   FRIENDS_PUT_START,
   FRIENDS_PUT_SUCCESS,
-  FRIENDS_PUT_FAILURE,
-  FRIENDS_DELETE_START,
-  FRIENDS_DELETE_SUCCESS,
-  FRIENDS_DELETE_FAILURE
-} from "../actions/friend-actions";
+  FRIENDS_PUT_FAILURE
+  // ,
+  // FRIENDS_DELETE_START,
+  // FRIENDS_DELETE_SUCCESS,
+  // FRIENDS_DELETE_FAILURE
+} from "../actions/friend.actions";
 
 const initialState = {
   userName: "",
@@ -22,10 +23,11 @@ const initialState = {
 };
 
 const friendReducer = (state = initialState, action) => {
-  console.log(`redux: reducers: index.js`, state);
-  console.log(`redux: reducers: index.js`, action);
+  // console.log(`redux: reducers: index.js`, state);
+  // console.log(`redux: reducers: index.js`, action);
   switch (action.type) {
     case FRIENDS_LOAD_START:
+      console.log(`FRIENDS_LOAD_START INITIATED`);
       return {
         ...state,
         isLoading: true
@@ -52,30 +54,30 @@ const friendReducer = (state = initialState, action) => {
         isLoading: true
       };
     case FRIENDS_POST_SUCCESS:
-      console.log(
-        `redux: reducers: index,js: FRIENDS_POST_SUCCESS: action.payload: `,
-        action.payload
-      );
+      // console.log(
+      //   `redux: reducers: index,js: FRIENDS_POST_SUCCESS: action.payload: `,
+      //   action.payload
+      // );
       return {
         ...state,
         friends: action.payload,
         isLoading: false
       };
     case FRIENDS_POST_FAILURE:
-      console.log(
-        `redux: reducers: index,js: FRIENDS_POST_FAILURE: action.payload: `,
-        action.payload
-      );
+      // console.log(
+      //   `redux: reducers: index,js: FRIENDS_POST_FAILURE: action.payload: `,
+      //   action.payload
+      // );
       return {
         ...state,
         error: action.payload,
         isLoading: false
       };
     case FRIENDS_PUT_START:
-      console.log(
-        `redux: reducers: index,js: FRIENDS_PUT_START: action.payload: `,
-        action.payload
-      );
+      // console.log(
+      //   `redux: reducers: index,js: FRIENDS_PUT_START: action.payload: `,
+      //   action.payload
+      // );
       return {
         ...state,
         friends: [...state.friends, action.payload]

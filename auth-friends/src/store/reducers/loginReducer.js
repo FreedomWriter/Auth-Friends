@@ -1,15 +1,17 @@
-const LOGIN_POST_START = "LOGIN_POST_START";
-const LOGIN_POST_SUCCESS = "LOGIN_POST_SUCCESS";
-const LOGIN_POST_FAILURE = "LOGIN_POST_FAILURE";
+import {
+  LOGIN_POST_START,
+  LOGIN_POST_SUCCESS,
+  LOGIN_POST_FAILURE
+} from "../actions/login.actions";
 
 const initialState = {
-  userName: "",
+  username: "",
   password: ""
 };
 
-const loginReducer = (state = initialState, action) => {
-  console.log(`redux: loginReducers: index.js`, state);
-  console.log(`redux: loginReducers: index.js`, action);
+const loginReducer = (state = initialState, action, props) => {
+  // console.log(`redux: loginReducers: index.js`, state);
+  // console.log(`redux: loginReducers: index.js`, action);
   switch (action.type) {
     case LOGIN_POST_START:
       return {
@@ -18,12 +20,12 @@ const loginReducer = (state = initialState, action) => {
       };
     case LOGIN_POST_SUCCESS:
       console.log(
-        `redux: loginReducers: index,js: LOGIN_POST_SUCCESS: action.payload: `,
+        `loginReducers: index,js: LOGIN_POST_SUCCESS: action.payload: `,
         action.payload
       );
       return {
         ...state,
-        LOGIN: action.payload,
+        username: action.payload,
         isLoading: false
       };
     case LOGIN_POST_FAILURE:
