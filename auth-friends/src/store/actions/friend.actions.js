@@ -16,10 +16,10 @@ export const FRIENDS_DELETE_START = "FRIENDS_DELETE_START";
 export const FRIENDS_DELETE_SUCCESS = "FRIENDS_DELETE_SUCCESS";
 export const FRIENDS_DELETE_FAILURE = "FRIENDS_DELETE_FAILURE";
 
-export const getFriends = id => dispatch => {
+export const getFriends = () => dispatch => {
   dispatch({ type: FRIENDS_LOAD_START });
   axiosWithAuth()
-    .get(`/friends/${id && id}`)
+    .get(`/friends`)
     .then(res => {
       console.log(
         `actions: get-actions: axiosWithAuth().then: res.data: `,
@@ -31,7 +31,7 @@ export const getFriends = id => dispatch => {
       });
     })
     .catch(err => {
-      //   console.log(`actions: get-actions: axiosWithAuth().catch: err: `, err);
+      console.log(`actions: get-actions: axiosWithAuth().catch: err: `, err);
       dispatch({
         type: FRIENDS_LOAD_FAILURE,
         payload: "error loading friends"

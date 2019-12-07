@@ -23,7 +23,7 @@ const initialState = {
 };
 
 const friendReducer = (state = initialState, action) => {
-  // console.log(`redux: reducers: index.js`, state);
+  console.log(`redux: reducers: index.js`, state);
   // console.log(`redux: reducers: index.js`, action);
   switch (action.type) {
     case FRIENDS_LOAD_START:
@@ -33,10 +33,10 @@ const friendReducer = (state = initialState, action) => {
         isLoading: true
       };
     case FRIENDS_LOAD_SUCCESS:
-      //   console.log(
-      //     `redux: reducers: index,js: FRIENDS_LOAD_SUCCESS: action.payload: `,
-      //     action.payload
-      //   );
+      console.log(
+        `redux: reducers: index,js: FRIENDS_LOAD_SUCCESS: action.payload: `,
+        action.payload
+      );
       return {
         ...state,
         friends: action.payload,

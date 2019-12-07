@@ -12,7 +12,7 @@ export const postLogin = value => dispatch => {
     .then(res => {
       console.log(
         `redux: post-actions: axiosWithAuth(): then: res.data: `,
-        res.data.payload
+        res.data
       );
       dispatch({
         type: LOGIN_POST_SUCCESS,

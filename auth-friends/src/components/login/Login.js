@@ -11,11 +11,10 @@ const LoginForm = ({ postLogin, history }) => {
   const { handleSubmit, register, errors } = useForm();
   const onSubmit = values => {
     console.log(`Login.js: onSubmit: values: `, values);
-    postLogin(values, () => {});
-    // window.location.href = "/protected";
+    postLogin(values);
     setLocalUserName(values.username);
   };
-
+  console.log(`username: `, localUserName);
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <input
@@ -50,10 +49,10 @@ const LoginForm = ({ postLogin, history }) => {
   );
 };
 
-const mapStateToProps = state => {
-  console.log(`LogIn.js: mapStateToProps: state: `, state);
-  return {
-    username: state.localUserName
-  };
-};
-export default connect(mapStateToProps, { postLogin })(LoginForm);
+// const mapStateToProps = state => {
+//   console.log(`LogIn.js: mapStateToProps: state: `, state);
+//   return {
+//     state
+//   };
+// };
+export default connect(null, { postLogin })(LoginForm);

@@ -24,9 +24,6 @@ function App() {
               <Link to="/login">Login</Link>
             </li>
           )}
-          {/* <li>
-            <Link to="/login">Login</Link>
-          </li> */}
           <li>
             <Link to="/protected">Protected Page</Link>
           </li>

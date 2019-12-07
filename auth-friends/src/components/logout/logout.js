@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 const Logout = ({ handleSubmit }) => {
   return (
     <li>
-      <Link onClick={handleSubmit}>Logout</Link>
+      <Link to="/" onClick={handleSubmit}>
+        Logout
+      </Link>
     </li>
   );
 };
