@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { withRouter } from "react-router-dom";
-import axios from "axios";
+// import { withRouter } from "react-router-dom";
 import useForm from "react-hook-form";
 import { connect } from "react-redux";
 
@@ -57,4 +56,4 @@ const mapStateToProps = state => {
     username: state.localUserName
   };
 };
-export default connect(mapStateToProps, { postLogin })(withRouter(LoginForm));
+export default connect(mapStateToProps, { postLogin })(LoginForm);
