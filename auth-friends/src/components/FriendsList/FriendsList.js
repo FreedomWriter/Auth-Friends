@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
-import { getFriends } from "../../store/actions/friend.actions";
+import { getFriends, postFriend } from "../../store/actions/friend.actions";
+// import AddFriend from "../login/add-friend/addFriend.component";
 
 const FriendsList = ({ getFriends, friends }) => {
   console.log(`FriendsList.js: friends: `, friends);
@@ -10,8 +12,14 @@ const FriendsList = ({ getFriends, friends }) => {
     getFriends();
   }, []);
 
+  // const handleSubmit = id => {
+  //   console.log(`AddFriend.js: handleSubmit: id: `, id);
+  //   postFriend(id);
+  // };
+
   return (
     <div>
+      <Link to="/add-friend">Add A Friend</Link>
       {friends.map(friend => {
         console.log(friend);
         return (
@@ -19,6 +27,7 @@ const FriendsList = ({ getFriends, friends }) => {
             <h3>{friend.name}</h3>
             <p>{friend.age}</p>
             <p>{friend.email}</p>
+            {/* <AddFriend onClick={() => handleSubmit(friend.id)} /> */}
           </div>
         );
       })}
@@ -33,4 +42,6 @@ const mapPropsToState = state => {
   };
 };
 
-export default connect(mapPropsToState, { getFriends })(FriendsList);
+export default connect(mapPropsToState, { getFriends, postFriend })(
+  FriendsList
+);

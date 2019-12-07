@@ -5,13 +5,12 @@ import { connect } from "react-redux";
 
 import { postLogin } from "../../store/actions/login.actions";
 
-const LoginForm = ({ postLogin, history }) => {
-  //   console.log(props);
+const LoginForm = props => {
+  console.log(props);
   const [localUserName, setLocalUserName] = useState("");
   const { handleSubmit, register, errors } = useForm();
   const onSubmit = values => {
     console.log(`Login.js: onSubmit: values: `, values);
-    postLogin(values);
     setLocalUserName(values.username);
   };
   console.log(`username: `, localUserName);

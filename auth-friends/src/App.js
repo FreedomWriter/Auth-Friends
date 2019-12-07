@@ -4,6 +4,7 @@ import PrivateRoute from "./PrivateRoute";
 import LoginForm from "./components/login/Login";
 import Logout from "./components/logout/logout";
 import FriendsList from "./components/FriendsList/FriendsList";
+import AddFriend from "./components/login/add-friend/addFriend.component";
 
 function App() {
   const token = localStorage.getItem("token");
@@ -25,12 +26,13 @@ function App() {
             </li>
           )}
           <li>
-            <Link to="/protected">Protected Page</Link>
+            <Link to="/signup">Sign Up</Link>
           </li>
         </ul>
         <Switch>
           <Route path="/login" component={LoginForm} />
           <PrivateRoute exact path="/protected" component={FriendsList} />
+          <PrivateRoute path="/add-friend" component={AddFriend} />
         </Switch>
       </div>
     </Router>
