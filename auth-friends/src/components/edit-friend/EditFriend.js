@@ -96,7 +96,7 @@ const EditFriend = ({ state, putFriend, match, deleteFriend }) => {
           Back
         </CustomLink>
         <CustomLink
-          to={match.path}
+          to={match.params.id}
           id={match.params.id}
           onClick={() => deleteFriend(match.params.id)}
           background="rgb(0,0,0,.4)"
