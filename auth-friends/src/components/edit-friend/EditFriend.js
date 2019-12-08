@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import useForm from "react-hook-form";
 import { connect } from "react-redux";
-import { withRouter, Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 import { putFriend, deleteFriend } from "../../store/actions/friend.actions";
 
-// import CustomButton from "../../custom-button/CustomButton.component";
+import { CustomLink } from "../custom-link/link.styles";
 
 const EditFriend = ({
   state,
@@ -74,10 +74,10 @@ const EditFriend = ({
       {/* <div>
         <DeleteButton id={match.params.id}>Delete</DeleteButton>
       </div> */}
-      <Link to="/protected">Back</Link>
-      <Link to={match.path} onClick={() => deleteFriend(match.params.id)}>
+      <CustomLink to="/protected">Back</CustomLink>
+      <CustomLink to={match.path} onClick={() => deleteFriend(match.params.id)}>
         Delete
-      </Link>
+      </CustomLink>
     </div>
   );
 };

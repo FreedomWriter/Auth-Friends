@@ -10,6 +10,8 @@ import FriendsList from "./components/FriendsList/FriendsList";
 import AddFriend from "./components/add-friend/AddFriend.component";
 import EditFriend from "./components/edit-friend/EditFriend";
 
+import "./App.css";
+
 function App() {
   // console.log(props);
   return (

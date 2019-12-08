@@ -7,6 +7,8 @@ import { getFriends, postFriend } from "../../store/actions/friend.actions";
 // import EditFriend from "../edit-friend/EditFriend";
 import Friend from "../friend/Friend.component";
 
+import { CustomLink } from "../custom-link/link.styles";
+
 const FriendsList = ({ getFriends, friends, match }) => {
   console.log(`FriendsList.js: friends: `, friends);
   console.log(`FriendsList.js: match: `, match);
@@ -22,7 +24,7 @@ const FriendsList = ({ getFriends, friends, match }) => {
 
   return (
     <div>
-      <Link to="/add-friend">Add A Friend</Link>
+      <CustomLink to="/add-friend">Add A Friend</CustomLink>
       {friends.map(friend => {
         // console.log(friend);
         // const { id, name, age, email, notes } = friend;

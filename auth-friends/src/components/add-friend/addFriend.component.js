@@ -1,7 +1,7 @@
 import React from "react";
 import useForm from "react-hook-form";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { CustomLink } from "../custom-link/link.styles";
 
 import { postFriend } from "../../store/actions/friend.actions";
 
@@ -24,43 +24,46 @@ const AddFriend = ({ state, postFriend, history }) => {
     <div>
       <form className="App" onSubmit={handleSubmit(onSubmit)}>
         <h1>Add A Friend</h1>
-        <label>Name:</label>
-        <input name="name" ref={register({ required: true })} />
+        <label htmlFor="name">Name:</label>
+        <input id="name" name="name" ref={register({ required: true })} />
         {/* <ErrorMessage error={errors.firstName} /> */}
 
         {/* <label>Last Name:</label>
       <input name="lastName" ref={register({ required: true, minLength: 2 })} />
       <ErrorMessage error={errors.firstName} /> */}
 
-        <label>Username</label>
+        <label htmlFor="username">Username</label>
         <input
+          id="username"
           name="username"
           // onBlur={e => validateUserName(e.target.value)}
           ref={register({ required: true })}
         />
         {/* <ErrorMessage error={errors.username} /> */}
 
-        <label>Email</label>
+        <label htmlFor="email">Email</label>
         <input
+          id="email"
           name="email"
           ref={register({ required: true, pattern: /^\S+@\S+$/i })}
         />
         {/* <ErrorMessage error={errors.email} /> */}
 
-        <label>Age</label>
+        <label htmlFor="age">Age</label>
         <input
+          id="age"
           name="age"
           type="number"
           ref={register({ required: true, min: 18 })}
         />
         {/* <ErrorMessage error={errors.age} /> */}
 
-        <label>Notes</label>
-        <textarea name="notes" ref={register} />
+        <label htmlFor="notes">Notes</label>
+        <textarea id="notes" name="notes" ref={register} />
 
         <input disabled={isSubmitting} type="submit" />
       </form>
-      <Link to="/protected">Back</Link>
+      <CustomLink to="/protected">Back</CustomLink>
     </div>
     // <div>
     //   <CustomButton>I'm adding a friend</CustomButton>

@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 
 import Logout from "../logout/logout";
 
+import { CustomLink, CustomLinkContainer } from "../custom-link/link.styles";
+
 const Header = () => {
   const token = localStorage.getItem("token");
 
@@ -13,18 +15,15 @@ const Header = () => {
 
   return (
     <div>
-      <ul>
+      <CustomLinkContainer>
         {token ? (
           <Logout handleSubmit={handleSubmit} />
         ) : (
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
+          <CustomLink to="/login">Login</CustomLink>
         )}
-        <li>
-          <Link to="/signup">Sign Up</Link>
-        </li>
-      </ul>
+
+        <CustomLink to="/signup">Sign Up</CustomLink>
+      </CustomLinkContainer>
     </div>
   );
 };

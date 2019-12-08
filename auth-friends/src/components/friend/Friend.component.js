@@ -1,10 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Link, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 import { getFriends, postFriend } from "../../store/actions/friend.actions";
 
-// import EditFriend from "../edit-friend/EditFriend";
+import { CustomLink } from "../custom-link/link.styles";
 
 const Friend = ({ friend, match }) => {
   console.log(`Friend.js: friend.id: `, friend.id);
@@ -15,7 +15,7 @@ const Friend = ({ friend, match }) => {
   return (
     <div>
       <div key={id}>
-        <Link to={`${match.path}/edit-friend/${id}`}>Edit</Link>
+        <CustomLink to={`${match.path}/edit-friend/${id}`}>Edit</CustomLink>
         <h3>{name}</h3>
         <p>{age}</p>
         <p>{email}</p>

@@ -1,13 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { CustomLink } from "../custom-link/link.styles";
 
 const Logout = ({ handleSubmit }) => {
   return (
-    <li>
-      <Link to="/" onClick={handleSubmit}>
-        Logout
-      </Link>
-    </li>
+    <CustomLink to="/" onClick={handleSubmit}>
+      Logout
+    </CustomLink>
   );
 };
 
