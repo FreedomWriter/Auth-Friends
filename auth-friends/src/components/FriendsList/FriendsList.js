@@ -1,36 +1,34 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
+import PrivateRoute from "../../PrivateRoute";
 
 import { getFriends, postFriend } from "../../store/actions/friend.actions";
-// import AddFriend from "../login/add-friend/addFriend.component";
+// import EditFriend from "../edit-friend/EditFriend";
+import Friend from "../friend/Friend.component";
 
-const FriendsList = ({ getFriends, friends }) => {
+const FriendsList = ({ getFriends, friends, match }) => {
   console.log(`FriendsList.js: friends: `, friends);
+  console.log(`FriendsList.js: match: `, match);
 
   useEffect(() => {
     getFriends();
   }, []);
 
-  // const handleSubmit = id => {
-  //   console.log(`AddFriend.js: handleSubmit: id: `, id);
-  //   postFriend(id);
-  // };
+  const handleSubmit = id => {
+    console.log(`AddFriend.js: handleSubmit: id: `, id);
+    postFriend(id);
+  };
 
   return (
     <div>
       <Link to="/add-friend">Add A Friend</Link>
       {friends.map(friend => {
         console.log(friend);
-        return (
-          <div key={friend.id}>
-            <h3>{friend.name}</h3>
-            <p>{friend.age}</p>
-            <p>{friend.email}</p>
-            {/* <AddFriend onClick={() => handleSubmit(friend.id)} /> */}
-          </div>
-        );
+        // const { id, name, age, email, notes } = friend;
+        return <Friend key={friend.id} friend={friend} />;
       })}
+      {/* <PrivateRoute path={`/edit-friend/:id`} component={EditFriend} /> */}
     </div>
   );
 };
@@ -43,5 +41,5 @@ const mapPropsToState = state => {
 };
 
 export default connect(mapPropsToState, { getFriends, postFriend })(
-  FriendsList
+  withRouter(FriendsList)
 );

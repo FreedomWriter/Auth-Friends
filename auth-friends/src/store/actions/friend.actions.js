@@ -67,7 +67,6 @@ export const postFriend = value => dispatch => {
 export const putFriend = (value, id) => dispatch => {
   dispatch({ type: FRIENDS_PUT_START, payload: value });
   console.log(`PUTFRIEND: value: `, value);
-  console.log(`PUTFRIEND: id: `, id);
   axiosWithAuth()
     .put(`/friends/${id}`, value)
     .then(res => {

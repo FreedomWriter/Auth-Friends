@@ -78,13 +78,13 @@ const friendReducer = (state = initialState, action) => {
         isLoading: false
       };
     case FRIENDS_PUT_START:
-      // console.log(
-      //   `redux: reducers: index,js: FRIENDS_PUT_START: action.payload: `,
-      //   action.payload
-      // );
+      console.log(
+        `redux: reducers: index,js: FRIENDS_PUT_START: action.payload: `,
+        action.payload
+      );
       return {
         ...state,
-        friends: [...state.friends, action.payload]
+        friends: [action.payload]
       };
 
     case FRIENDS_PUT_SUCCESS:

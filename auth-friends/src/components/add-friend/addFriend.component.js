@@ -2,7 +2,7 @@ import React from "react";
 import useForm from "react-hook-form";
 import { connect } from "react-redux";
 
-import { postFriend } from "../../../store/actions/friend.actions";
+import { postFriend } from "../../store/actions/friend.actions";
 
 // import CustomButton from "../../custom-button/CustomButton.component";
 
@@ -53,8 +53,8 @@ const AddFriend = ({ state, postFriend, history }) => {
       />
       {/* <ErrorMessage error={errors.age} /> */}
 
-      <label>About you</label>
-      <textarea name="aboutyou" ref={register} />
+      <label>Notes</label>
+      <textarea name="notes" ref={register} />
 
       <input disabled={isSubmitting} type="submit" />
     </form>
@@ -64,7 +64,7 @@ const AddFriend = ({ state, postFriend, history }) => {
   );
 };
 const mapStateToProps = state => {
-  console.log(`LogIn.js: mapStateToProps: state: `, state);
+  console.log(`AddFriend.js: mapStateToProps: state: `, state);
   return {
     state
   };
