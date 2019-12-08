@@ -88,9 +88,6 @@ const EditFriend = ({ state, putFriend, match, deleteFriend }) => {
 
         <input disabled={isSubmitting} type="submit" />
       </form>
-      {/* <div>
-        <DeleteButton id={match.params.id}>Delete</DeleteButton>
-      </div> */}
       <CustomLinkContainer flexFlow="row nowrap" alignItems="center">
         <CustomLink to="/protected" background="rgb(0,0,0,.4)">
           Back

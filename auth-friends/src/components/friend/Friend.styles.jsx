@@ -4,11 +4,11 @@ export const FriendContainer = styled.div`
   border: 1px solid red;
   margin: 5% auto;
   width: 33vw;
-  height: 400px;
+  min-height: 250px;
   color: #d1d1d1;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: center;
+  justify-content: space-evenly;
   h3 {
     font-size: 2rem;
   }
