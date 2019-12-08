@@ -54,9 +54,7 @@ const LoginForm = ({ postLogin }) => {
       />
       {errors.password && errors.password.message}
 
-      <CustomLink background="rgb(0,0,0, .7)" type="submit">
-        Submit
-      </CustomLink>
+      <button type="submit">Submit</button>
     </form>
   );
 };

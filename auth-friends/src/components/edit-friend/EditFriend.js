@@ -6,14 +6,10 @@ import { withRouter } from "react-router-dom";
 import { putFriend, deleteFriend } from "../../store/actions/friend.actions";
 
 import { CustomLink, CustomLinkContainer } from "../custom-link/link.styles";
+import "../login/login.styles.css";
+import "./EditFriends.styles.css";
 
-const EditFriend = ({
-  state,
-  putFriend,
-  match,
-  deleteFriend,
-  getThisFriend
-}) => {
+const EditFriend = ({ state, putFriend, match, deleteFriend }) => {
   console.log(`EditFriend.js: state: `, state);
 
   const {
@@ -47,27 +43,48 @@ const EditFriend = ({
     // putFriend(values);
   };
   return (
-    <div>
-      <form className="App" onSubmit={handleSubmit(onSubmit)}>
-        <h1>Update</h1>
-        <label>Name:</label>
-        <input name="name" ref={register} />
+    <div className="edit-form-container">
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <h2>Update</h2>
+        <input
+          className="input edit-input"
+          aria-label="name"
+          placeholder="name"
+          name="name"
+          ref={register}
+        />
         {/* <ErrorMessage error={errors.firstName} /> */}
 
         {/* <label>Last Name:</label>
       <input name="lastName" ref={register({ required: true, minLength: 2 })} />
       <ErrorMessage error={errors.firstName} /> */}
 
-        <label>Email</label>
-        <input name="email" ref={register({ pattern: /^\S+@\S+$/i })} />
+        <input
+          className="input edit-input"
+          aria-label="email"
+          name="email"
+          placeholder="email@email.com"
+          ref={register({ pattern: /^\S+@\S+$/i })}
+        />
         {/* <ErrorMessage error={errors.email} /> */}
 
-        <label>Age</label>
-        <input name="age" type="number" ref={register({ min: 18 })} />
+        <input
+          className="input edit-input"
+          aria-label="birthday"
+          placeholder="birthday"
+          name="Birthday"
+          type="number"
+          ref={register({ min: 18 })}
+        />
         {/* <ErrorMessage error={errors.age} /> */}
 
-        <label>Notes</label>
-        <textarea name="notes" ref={register} />
+        <textarea
+          className="input edit-input"
+          aria-label="notes"
+          placeholder="Notes"
+          name="notes"
+          ref={register}
+        />
 
         <input disabled={isSubmitting} type="submit" />
       </form>
@@ -75,10 +92,14 @@ const EditFriend = ({
         <DeleteButton id={match.params.id}>Delete</DeleteButton>
       </div> */}
       <CustomLinkContainer flexFlow="row nowrap" alignItems="center">
-        <CustomLink to="/protected">Back</CustomLink>
+        <CustomLink to="/protected" background="rgb(0,0,0,.4)">
+          Back
+        </CustomLink>
         <CustomLink
           to={match.path}
+          id={match.params.id}
           onClick={() => deleteFriend(match.params.id)}
+          background="rgb(0,0,0,.4)"
         >
           Delete
         </CustomLink>

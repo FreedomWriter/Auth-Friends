@@ -34,7 +34,7 @@ export const CustomLink = styled(Link)`
     props.background ? props.background : bkgrndColor};
   /* margin */
   margin: ${props => (props.margin ? props.margin : "1rem")};
-  margin-top: ${props => props.marginTop && props.marginTop};
+  margin-top: ${props => props.margintop && props.margintop};
   margin-bottom: ${props => props.marginBottom && props.marginBottom};
   margin-right: ${props => props.marginRight && props.marginRight};
   margin-left: ${props => props.marginLeft && props.marginLeft};

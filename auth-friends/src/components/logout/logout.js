@@ -3,7 +3,7 @@ import { CustomLink } from "../custom-link/link.styles";
 
 const Logout = ({ handleSubmit }) => {
   return (
-    <CustomLink marginTop="0" to="/" onClick={handleSubmit}>
+    <CustomLink margintop="0" to="/" onClick={handleSubmit}>
       Logout
     </CustomLink>
   );

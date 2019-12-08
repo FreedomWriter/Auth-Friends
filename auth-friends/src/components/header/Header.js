@@ -20,11 +20,11 @@ const Header = match => {
         {token ? (
           <>
             {match.location.pathname === "/add-friend" ? (
-              <CustomLink marginTop="0" to="/protected">
+              <CustomLink margintop="0" to="/protected">
                 Back
               </CustomLink>
             ) : (
-              <CustomLink marginTop="0" to="/add-friend">
+              <CustomLink margintop="0" to="/add-friend">
                 Add A Friend
               </CustomLink>
             )}
@@ -34,10 +34,10 @@ const Header = match => {
           <>
             {match.location.pathname === "/login" ? (
               <>
-                <CustomLink marginTop="0" to="/signup">
+                <CustomLink margintop="0" to="/signup">
                   Sign Up
                 </CustomLink>
-                <CustomLink marginTop="0" to="/">
+                <CustomLink margintop="0" to="/">
                   Back
                 </CustomLink>
               </>
@@ -45,10 +45,10 @@ const Header = match => {
               <>
                 {match.location.pathname === "/signup" && (
                   <>
-                    <CustomLink marginTop="0" to="/login">
+                    <CustomLink margintop="0" to="/login">
                       Login
                     </CustomLink>
-                    <CustomLink marginTop="0" to="/">
+                    <CustomLink margintop="0" to="/">
                       Back
                     </CustomLink>
                   </>
@@ -58,10 +58,10 @@ const Header = match => {
             <>
               {match.location.pathname === "/" && (
                 <>
-                  <CustomLink marginTop="0" to="/login">
+                  <CustomLink margintop="0" to="/login">
                     Login
                   </CustomLink>
-                  <CustomLink marginTop="0" to="/Sign Up">
+                  <CustomLink margintop="0" to="/Sign Up">
                     Sign Up
                   </CustomLink>
                 </>
@@ -80,10 +80,10 @@ export default withRouter(Header);
   /* <>
 {!token && (
   <>
-    <CustomLink marginTop="0" to="/login">
+    <CustomLink margintop="0" to="/login">
       Login
     </CustomLink>
-    <CustomLink marginTop="0" to="/Sign Up">
+    <CustomLink margintop="0" to="/Sign Up">
       Sign Up
     </CustomLink>
   </>

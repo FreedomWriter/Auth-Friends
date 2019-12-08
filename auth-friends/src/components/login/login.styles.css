@@ -19,6 +19,17 @@
   padding: 0.8rem 0.8rem 0.8rem 0.4rem;
   display: block;
   width: 100%;
+  min-height: 35px;
+  border: none;
+  border-bottom: 1px solid rgb(0, 0, 0, 0.9);
+  margin: 25px 0;
+}
+
+.input:active {
+  background-color: rgb(51, 51, 51, 0.4);
+  padding: 0.8rem 0.8rem 0.8rem 0.4rem;
+  display: block;
+  width: 100%;
   border: none;
   border-bottom: 1px solid rgb(0, 0, 0, 0.9);
   margin: 25px 0;
