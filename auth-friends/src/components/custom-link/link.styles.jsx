@@ -69,14 +69,12 @@ export const CustomLink = styled(Link)`
   flex-shrink: ${props => props.flexShrink && props.flexShrink};
   flex-basis: ${props => props.flexBasis && props.flexBasis};
   /* animations */
-  transition: ${props => props.transition && props.transition}
+  transition: ${props => props.transition && props.transition};
 
   &:hover {
-    background-color: ${props =>
-      props.background ? props.background : "#4d4d4d"};
-    color: ${props => (props.color ? props.color : "#d1d1d1")};
+    background-color: ${props => (props.color ? props.color : "#d1d1d1")};
+    color: ${props => (props.background ? props.background : "#4d4d4d")};
   }
-
 `;
 export const CustomLinkContainer = styled.div`
   cursor: ${props => (props.cursor ? props.cursor : "pointer")};
