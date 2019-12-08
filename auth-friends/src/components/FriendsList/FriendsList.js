@@ -15,16 +15,16 @@ const FriendsList = ({ getFriends, friends, match }) => {
     getFriends();
   }, []);
 
-  const handleSubmit = id => {
-    console.log(`AddFriend.js: handleSubmit: id: `, id);
-    postFriend(id);
-  };
+  // const handleSubmit = id => {
+  //   console.log(`AddFriend.js: handleSubmit: id: `, id);
+  //   postFriend(id);
+  // };
 
   return (
     <div>
       <Link to="/add-friend">Add A Friend</Link>
       {friends.map(friend => {
-        console.log(friend);
+        // console.log(friend);
         // const { id, name, age, email, notes } = friend;
         return <Friend key={friend.id} friend={friend} />;
       })}

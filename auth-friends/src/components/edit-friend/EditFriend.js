@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import useForm from "react-hook-form";
 import { connect } from "react-redux";
 import { withRouter, Link } from "react-router-dom";
@@ -7,8 +7,15 @@ import { putFriend, deleteFriend } from "../../store/actions/friend.actions";
 
 // import CustomButton from "../../custom-button/CustomButton.component";
 
-const EditFriend = ({ state, putFriend, match, deleteFriend }) => {
-  //   console.log(`EditFriend.js: state: `, state.friend);
+const EditFriend = ({
+  state,
+  putFriend,
+  match,
+  deleteFriend,
+  getThisFriend
+}) => {
+  console.log(`EditFriend.js: state: `, state);
+
   const {
     register,
     handleSubmit,
@@ -32,13 +39,11 @@ const EditFriend = ({ state, putFriend, match, deleteFriend }) => {
           },
           id
         );
-        // window.location.href = "/protected";
+        window.location.href = "/protected";
       }
     }
     console.log(`EditFriend.js: handleSubmit: id: `, values);
-    const handleDelete = deleteValue => {
-      console.log(id);
-    };
+
     // putFriend(values);
   };
   return (
@@ -69,7 +74,10 @@ const EditFriend = ({ state, putFriend, match, deleteFriend }) => {
       {/* <div>
         <DeleteButton id={match.params.id}>Delete</DeleteButton>
       </div> */}
-      <Link to="/protected">Friends</Link>
+      <Link to="/protected">Back</Link>
+      <Link to={match.path} onClick={() => deleteFriend(match.params.id)}>
+        Delete
+      </Link>
     </div>
   );
 };
@@ -79,6 +87,7 @@ const mapStateToProps = state => {
     friends: state.friends
   };
 };
-export default connect(mapStateToProps, { putFriend, deleteFriend })(
-  withRouter(EditFriend)
-);
+export default connect(mapStateToProps, {
+  putFriend,
+  deleteFriend
+})(withRouter(EditFriend));

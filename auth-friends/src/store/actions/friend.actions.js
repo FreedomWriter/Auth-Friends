@@ -53,7 +53,7 @@ export const postFriend = value => dispatch => {
         type: FRIENDS_POST_SUCCESS,
         payload: res.data
       });
-      window.location.href = "/protected";
+      // window.location.href = "/protected";
     })
     .catch(err => {
       console.log(err);

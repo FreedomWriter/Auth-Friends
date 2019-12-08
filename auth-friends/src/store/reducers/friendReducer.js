@@ -7,11 +7,10 @@ import {
   FRIENDS_POST_FAILURE,
   FRIENDS_PUT_START,
   FRIENDS_PUT_SUCCESS,
-  FRIENDS_PUT_FAILURE
-  // ,
-  // FRIENDS_DELETE_START,
-  // FRIENDS_DELETE_SUCCESS,
-  // FRIENDS_DELETE_FAILURE
+  FRIENDS_PUT_FAILURE,
+  FRIENDS_DELETE_START,
+  FRIENDS_DELETE_SUCCESS,
+  FRIENDS_DELETE_FAILURE
 } from "../actions/friend.actions";
 
 const initialState = {
@@ -84,11 +83,56 @@ const friendReducer = (state = initialState, action) => {
       );
       return {
         ...state,
+        isLoading: true
+      };
+    case FRIENDS_PUT_SUCCESS:
+      console.log(
+        `redux: reducers: index,js: FRIENDS_PUT_START: action.payload: `,
+        action.payload
+      );
+      return {
+        ...state,
         friends: [action.payload]
       };
-
-    case FRIENDS_PUT_SUCCESS:
     case FRIENDS_PUT_FAILURE:
+      console.log(
+        `redux: reducers: index,js: FRIENDS_PUT_FAILURE: action.payload: `,
+        action.payload
+      );
+      return {
+        ...state,
+        error: action.payload,
+        isLoading: false
+      };
+
+    case FRIENDS_DELETE_START:
+      console.log(
+        `redux: reducers: index,js: FRIENDS_DELETE_START: action.payload: `,
+        action.payload
+      );
+      return {
+        ...state,
+        isLoading: true
+      };
+    case FRIENDS_DELETE_SUCCESS:
+      console.log(
+        `redux: reducers: index,js: FRIENDS_DELETE_START: action.payload: `,
+        action.payload
+      );
+      return {
+        ...state,
+        friends: [action.payload]
+      };
+    case FRIENDS_DELETE_FAILURE:
+      console.log(
+        `redux: reducers: index,js: FRIENDS_DELETE_FAILURE: action.payload: `,
+        action.payload
+      );
+      return {
+        ...state,
+        error: action.payload,
+        isLoading: false
+      };
 
     default:
       return state;
