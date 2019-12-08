@@ -18,7 +18,8 @@ const LoginForm = ({ postLogin, history }) => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <input
-        aria-label="user name input"
+        aria-label="user name"
+        placeholder="Enter User Name"
         name="username"
         ref={register({
           required: "Required",
@@ -31,6 +32,8 @@ const LoginForm = ({ postLogin, history }) => {
       {errors.username && errors.username.message}
 
       <input
+        aria-label="password"
+        placeholder="Enter Password"
         name="password"
         type="password"
         ref={register({

@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 
 import { postLogin } from "../../store/actions/login.actions";
 
-const LoginForm = props => {
+const SignUpForm = props => {
   console.log(props);
   const [localUserName, setLocalUserName] = useState("");
   const { handleSubmit, register, errors } = useForm();
@@ -16,9 +16,11 @@ const LoginForm = props => {
   console.log(`username: `, localUserName);
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
+      <h2>NEED A PUT TO /FRIENDS BEFORE THIS IS FUNCTIONAL</h2>
       <input
-        aria-label="user name input"
+        aria-label="select user name"
         name="username"
+        placeholder="Please Select User Name"
         ref={register({
           required: "Required",
           pattern: {
@@ -30,8 +32,10 @@ const LoginForm = props => {
       {errors.username && errors.username.message}
 
       <input
+        aria-label="choose a password"
         name="password"
         type="password"
+        placeholder="Please Choose A Password"
         ref={register({
           required: "Required",
           pattern: {
@@ -55,4 +59,4 @@ const LoginForm = props => {
 //     state
 //   };
 // };
-export default connect(null, { postLogin })(LoginForm);
+export default connect(null, { postLogin })(SignUpForm);

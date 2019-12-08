@@ -2,43 +2,27 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Link, Route } from "react-router-dom";
 import { connect } from "react-redux";
 import PrivateRoute from "./PrivateRoute";
+
+import Header from "./components/header/Header";
 import LoginForm from "./components/login/Login";
-import Logout from "./components/logout/logout";
+import SignUpForm from "./components/signup/SignUp";
 import FriendsList from "./components/FriendsList/FriendsList";
-import AddFriend from "./components/add-friend/addFriend.component";
+import AddFriend from "./components/add-friend/AddFriend.component";
 import EditFriend from "./components/edit-friend/EditFriend";
 
-function App(props) {
-  console.log(props);
-  const token = localStorage.getItem("token");
-
-  const handleSubmit = () => {
-    localStorage.removeItem("token");
-    window.location.href = "/";
-  };
-
+function App() {
+  // console.log(props);
   return (
     <Router>
       <div>
-        <ul>
-          {token ? (
-            <Logout handleSubmit={handleSubmit} />
-          ) : (
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
-          )}
-          <li>
-            <Link to="/signup">Sign Up</Link>
-          </li>
-        </ul>
+        <Header />
         <Switch>
           <Route path="/login" component={LoginForm} />
+          <Route path="/signup" component={SignUpForm} />
           <PrivateRoute exact path="/protected" component={FriendsList} />
           <PrivateRoute path="/add-friend" component={AddFriend} />
           <PrivateRoute
             path={`/protected/edit-friend/:id`}
-            // id={props.friends.id}
             component={EditFriend}
           />
         </Switch>
