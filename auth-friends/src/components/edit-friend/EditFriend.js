@@ -5,7 +5,7 @@ import { withRouter } from "react-router-dom";
 
 import { putFriend, deleteFriend } from "../../store/actions/friend.actions";
 
-import { CustomLink } from "../custom-link/link.styles";
+import { CustomLink, CustomLinkContainer } from "../custom-link/link.styles";
 
 const EditFriend = ({
   state,
@@ -74,17 +74,15 @@ const EditFriend = ({
       {/* <div>
         <DeleteButton id={match.params.id}>Delete</DeleteButton>
       </div> */}
-      <CustomLink height="50px" width="100px" to="/protected">
-        Back
-      </CustomLink>
-      <CustomLink
-        height="50px"
-        width="100px"
-        to={match.path}
-        onClick={() => deleteFriend(match.params.id)}
-      >
-        Delete
-      </CustomLink>
+      <CustomLinkContainer flexFlow="row nowrap" alignItems="center">
+        <CustomLink to="/protected">Back</CustomLink>
+        <CustomLink
+          to={match.path}
+          onClick={() => deleteFriend(match.params.id)}
+        >
+          Delete
+        </CustomLink>
+      </CustomLinkContainer>
     </div>
   );
 };

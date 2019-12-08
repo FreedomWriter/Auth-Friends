@@ -32,12 +32,41 @@ const Header = match => {
           </>
         ) : (
           <>
-            <CustomLink marginTop="0" to="/login">
-              Login
-            </CustomLink>
-            <CustomLink marginTop="0" to="/signup">
-              Sign Up
-            </CustomLink>
+            {match.location.pathname === "/login" ? (
+              <>
+                <CustomLink marginTop="0" to="/signup">
+                  Sign Up
+                </CustomLink>
+                <CustomLink marginTop="0" to="/">
+                  Back
+                </CustomLink>
+              </>
+            ) : (
+              <>
+                {match.location.pathname === "/signup" && (
+                  <>
+                    <CustomLink marginTop="0" to="/login">
+                      Login
+                    </CustomLink>
+                    <CustomLink marginTop="0" to="/">
+                      Back
+                    </CustomLink>
+                  </>
+                )}
+              </>
+            )}
+            <>
+              {match.location.pathname === "/" && (
+                <>
+                  <CustomLink marginTop="0" to="/login">
+                    Login
+                  </CustomLink>
+                  <CustomLink marginTop="0" to="/Sign Up">
+                    Sign Up
+                  </CustomLink>
+                </>
+              )}
+            </>
           </>
         )}
       </CustomLinkContainer>
@@ -46,3 +75,18 @@ const Header = match => {
 };
 
 export default withRouter(Header);
+
+{
+  /* <>
+{!token && (
+  <>
+    <CustomLink marginTop="0" to="/login">
+      Login
+    </CustomLink>
+    <CustomLink marginTop="0" to="/Sign Up">
+      Sign Up
+    </CustomLink>
+  </>
+)}
+</> */
+}

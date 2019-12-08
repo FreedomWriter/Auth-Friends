@@ -1,11 +1,15 @@
 import React, { useState } from "react";
+
 // import { withRouter } from "react-router-dom";
 import useForm from "react-hook-form";
 import { connect } from "react-redux";
 
 import { postLogin } from "../../store/actions/login.actions";
 
-const LoginForm = ({ postLogin, history }) => {
+import "./login.styles.css";
+import { CustomLink } from "../custom-link/link.styles";
+
+const LoginForm = ({ postLogin }) => {
   //   console.log(props);
   const [localUserName, setLocalUserName] = useState("");
   const { handleSubmit, register, errors } = useForm();
@@ -16,10 +20,12 @@ const LoginForm = ({ postLogin, history }) => {
   };
   console.log(`username: `, localUserName);
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form className="form-container" onSubmit={handleSubmit(onSubmit)}>
+      <h3>Log In</h3>
       <input
+        className="input"
         aria-label="user name"
-        placeholder="Enter User Name"
+        placeholder="User Name"
         name="username"
         ref={register({
           required: "Required",
@@ -30,10 +36,10 @@ const LoginForm = ({ postLogin, history }) => {
         })}
       />
       {errors.username && errors.username.message}
-
       <input
+        className="input"
         aria-label="password"
-        placeholder="Enter Password"
+        placeholder="Password"
         name="password"
         type="password"
         ref={register({
@@ -48,15 +54,11 @@ const LoginForm = ({ postLogin, history }) => {
       />
       {errors.password && errors.password.message}
 
-      <button type="submit">Submit</button>
+      <CustomLink background="rgb(0,0,0, .7)" type="submit">
+        Submit
+      </CustomLink>
     </form>
   );
 };
 
-// const mapStateToProps = state => {
-//   console.log(`LogIn.js: mapStateToProps: state: `, state);
-//   return {
-//     state
-//   };
-// };
 export default connect(null, { postLogin })(LoginForm);

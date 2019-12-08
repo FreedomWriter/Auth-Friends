@@ -5,6 +5,9 @@ import { connect } from "react-redux";
 
 import { postLogin } from "../../store/actions/login.actions";
 
+import "../form-styling/form.styles";
+import { CustomLink } from "../custom-link/link.styles";
+
 const SignUpForm = props => {
   console.log(props);
   const [localUserName, setLocalUserName] = useState("");
@@ -15,12 +18,13 @@ const SignUpForm = props => {
   };
   console.log(`username: `, localUserName);
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form className="form-container" onSubmit={handleSubmit(onSubmit)}>
       <h2>NEED A PUT TO /FRIENDS BEFORE THIS IS FUNCTIONAL</h2>
       <input
+        className="input"
         aria-label="select user name"
         name="username"
-        placeholder="Please Select User Name"
+        placeholder="Select User Name"
         ref={register({
           required: "Required",
           pattern: {
@@ -32,10 +36,12 @@ const SignUpForm = props => {
       {errors.username && errors.username.message}
 
       <input
+        className="input"
+        width="400px"
         aria-label="choose a password"
         name="password"
         type="password"
-        placeholder="Please Choose A Password"
+        placeholder="Choose A Password"
         ref={register({
           required: "Required",
           pattern: {
@@ -48,7 +54,7 @@ const SignUpForm = props => {
       />
       {errors.password && errors.password.message}
 
-      <button type="submit">Submit</button>
+      <CustomLink type="submit">Submit</CustomLink>
     </form>
   );
 };

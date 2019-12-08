@@ -25,13 +25,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 2rem;
-  background-color: #e1e1e1;
+  background-color: #4c4c4c;
   color: #4d4d4d;
   text-rendering: optimizeLegibility;
-  &:hover {
+  /* &:hover {
     background-color: #4d4d4d;
     color: #d1d1d1;
-  }
+  } */
 }
 
 .clearfix {

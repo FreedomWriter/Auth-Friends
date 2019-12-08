@@ -8,7 +8,7 @@ const fntColor = "#d1d1d1";
 //   return `border:${size} ${style} ${color}`;
 // };
 
-//custom button - able to accept props
+//can extend CustomLink like this export const NewCustomLink = styled(CustomLink)`//some updates here`;
 export const CustomLink = styled(Link)`
   cursor: ${props => (props.cursor ? props.cursor : "pointer")};
   /* font */
@@ -80,6 +80,7 @@ export const CustomLink = styled(Link)`
 `;
 export const CustomLinkContainer = styled.div`
   cursor: ${props => (props.cursor ? props.cursor : "pointer")};
+  margin: ${props => (props.margin ? props.margin : "1rem")};
   min-width: ${props => (props.minWidth ? props.minWidth : "150px")};
   min-height: ${props => props.minHeight && props.minWidth};
   height: ${props => props.height && props.height};
