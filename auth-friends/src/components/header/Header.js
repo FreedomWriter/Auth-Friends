@@ -1,9 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import Logout from "../logout/logout";
 
 import { CustomLink, CustomLinkContainer } from "../custom-link/link.styles";
+import { HeaderStyles } from "./Header.styles";
 
 const Header = () => {
   const token = localStorage.getItem("token");
@@ -14,17 +14,18 @@ const Header = () => {
   };
 
   return (
-    <div>
+    <HeaderStyles>
       <CustomLinkContainer>
         {token ? (
           <Logout handleSubmit={handleSubmit} />
         ) : (
-          <CustomLink to="/login">Login</CustomLink>
+          <>
+            <CustomLink to="/login">Login</CustomLink>
+            <CustomLink to="/signup">Sign Up</CustomLink>
+          </>
         )}
-
-        <CustomLink to="/signup">Sign Up</CustomLink>
       </CustomLinkContainer>
-    </div>
+    </HeaderStyles>
   );
 };
 
