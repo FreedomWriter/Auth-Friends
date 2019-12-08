@@ -10,13 +10,15 @@ import FriendsList from "./components/FriendsList/FriendsList";
 import AddFriend from "./components/add-friend/AddFriend.component";
 import EditFriend from "./components/edit-friend/EditFriend";
 
-import "./App.css";
+// import "./GlobalStyles";
+import { GlobalStyle } from "./GlobalStyles";
 
 function App() {
   // console.log(props);
   return (
     <Router>
       <div>
+        <GlobalStyle />
         <Header />
         <Switch>
           <Route path="/login" component={LoginForm} />

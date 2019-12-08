@@ -1,42 +1,93 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-//variable which can be used with template literal syntax
 const bkgrndColor = "#4d4d4d";
-const fontColor = "#d1d1d1";
-const padding = "padding:1rem";
-const margin = "margin:1rem";
-const border = (size = "1px", style = "solid", color = "transparent") => {
-  return `border:${size} ${style} ${color}`;
-};
+const fntColor = "#d1d1d1";
+//below works if you simply add <-- ${border()} --> with no key name, but it won't work for passing props
+// const border = (size = "1px", style = "solid", color = "hotpink") => {
+//   return `border:${size} ${style} ${color}`;
+// };
 
+//custom button - able to accept props
 export const CustomLink = styled(Link)`
-  ${margin};
-  ${padding}
-  ${border()}
-  width: 10rem;
-  height: 4rem;
-  color: ${fontColor};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: ${bkgrndColor};
-  text-transform: uppercase;
-  text-decoration: none;
-  cursor: pointer;
+  cursor: ${props => (props.cursor ? props.cursor : "pointer")};
+  /* font */
+  text-decoration: ${props =>
+    props.textDecoration ? props.textDecoration : "none"};
+  font-size: ${props => (props.fontSize ? props.fontSize : "700")};
+  font-weight: ${props => (props.fontWeight ? props.fontWeight : "700")};
+  letter-spacing: ${props =>
+    props.letterSpacing ? props.fontWeight : "1.5px"};
+  text-transform: ${props =>
+    props.textTransform ? props.textTransform : "uppercase"};
+  /* width */
+  width: ${props => (props.width ? props.width : "120px")};
+  min-width: ${props => props.minWidth && props.minWidth};
+  max-width: ${props => props.maxWidth && props.maxWidth};
+  /* height */
+  height: ${props => (props.height ? props.height : "30px")};
+  min-height: ${props => props.minHeight && props.minHeight};
+  max-height: ${props => props.maxHeight && props.maxHeight};
+  /* color */
+  color: ${props => (props.color ? props.color : fntColor)};
+  background-color: ${props =>
+    props.background ? props.background : bkgrndColor};
+  /* margin */
+  margin: ${props => (props.margin ? props.margin : "1rem")};
+  margin-top: ${props => props.marginTop && props.marginTop};
+  margin-bottom: ${props => props.marginBottom && props.marginBottom};
+  margin-right: ${props => props.marginRight && props.marginRight};
+  margin-left: ${props => props.marginLeft && props.marginLeft};
+  /* padding */
+  padding: ${props => props.padding && props.padding};
+  padding-top: ${props => props.paddingTop && props.paddingTop};
+  padding-bottom: ${props => props.paddingBottom && props.paddingBottom};
+  padding-right: ${props => props.paddingRight && props.paddingRight};
+  padding-left: ${props => props.paddingLeft && props.paddingLeft};
+  /* borders */
+  border: ${props => props.border && props.border};
+  border-top: ${props => props.borderTop && props.borderTop};
+  border-bottom: ${props => props.borderBottom && props.borderBottom};
+  border-right: ${props => props.borderRight && props.borderRight};
+  border-left: ${props => props.borderLeft && props.borderLeft};
+  border-radius: ${props =>
+    props.borderRadius ? props.borderRadius : "0.5rem"};
+  /* flexbox */
+  display: ${props => (props.display ? props.display : "flex")};
+  flex: ${props => props.flex && props.flex};
+  flex-direction: ${props => props.flexDirection && props.flexDirection};
+  flex-wrap: ${props => props.flexWrap && props.flexWrap};
+  flex-flow: ${props => (props.flexFlow ? props.flexFlow : "column nowrap")};
+  justify-content: ${props =>
+    props.justifyContent ? props.justifyContent : "center"};
+  align-items: ${props => (props.alignItems ? props.alignItems : "center")};
+  align-content: ${props =>
+    props.alignContent ? props.alignContent : "center"};
+  align-self: ${props => props.alignSelf && props.alignSelf};
+  order: ${props => props.order && props.order};
+  flex-grow: ${props => props.flexGrow && props.flexGrow};
+  flex-shrink: ${props => props.flexShrink && props.flexShrink};
+  flex-basis: ${props => props.flexBasis && props.flexBasis};
+  /* animations */
+  transition: ${props => props.transition && props.transition}
 
   &:hover {
-    background: ${fontColor};
-    color: ${bkgrndColor};
+    background-color: ${props =>
+      props.background ? props.background : "#4d4d4d"};
+    color: ${props => (props.color ? props.color : "#d1d1d1")};
   }
+
 `;
 export const CustomLinkContainer = styled.div`
-  min-width: 165px;
-  width: auto;
-  height: 50px;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-evenly;
+  cursor: ${props => (props.cursor ? props.cursor : "pointer")};
+  min-width: ${props => (props.minWidth ? props.minWidth : "150px")};
+  min-height: ${props => props.minHeight && props.minWidth};
+  height: ${props => props.height && props.height};
+  width: ${props => (props.width ? props.width : "auto")};
+  display: ${props => (props.display ? props.display : "flex")};
+  flex-flow: ${props => (props.flexFlow ? props.flexFlow : "column nowrap")};
+  justify-content: ${props =>
+    props.justifyContent ? props.justifyContent : "center"};
   @media screen and (max-width: 800px) {
   }
 `;

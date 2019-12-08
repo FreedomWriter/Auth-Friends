@@ -74,8 +74,15 @@ const EditFriend = ({
       {/* <div>
         <DeleteButton id={match.params.id}>Delete</DeleteButton>
       </div> */}
-      <CustomLink to="/protected">Back</CustomLink>
-      <CustomLink to={match.path} onClick={() => deleteFriend(match.params.id)}>
+      <CustomLink height="50px" width="100px" to="/protected">
+        Back
+      </CustomLink>
+      <CustomLink
+        height="50px"
+        width="100px"
+        to={match.path}
+        onClick={() => deleteFriend(match.params.id)}
+      >
         Delete
       </CustomLink>
     </div>

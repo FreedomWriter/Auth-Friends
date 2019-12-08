@@ -24,13 +24,11 @@ const FriendsList = ({ getFriends, friends, match }) => {
 
   return (
     <div>
-      <CustomLink to="/add-friend">Add A Friend</CustomLink>
       {friends.map(friend => {
         // console.log(friend);
         // const { id, name, age, email, notes } = friend;
         return <Friend key={friend.id} friend={friend} />;
       })}
-      {/* <PrivateRoute path={`/edit-friend/:id`} component={EditFriend} /> */}
     </div>
   );
 };

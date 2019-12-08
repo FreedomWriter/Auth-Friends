@@ -15,7 +15,13 @@ const Friend = ({ friend, match }) => {
   return (
     <div>
       <div key={id}>
-        <CustomLink to={`${match.path}/edit-friend/${id}`}>Edit</CustomLink>
+        <CustomLink
+          height="25px"
+          width="45px"
+          to={`${match.path}/edit-friend/${id}`}
+        >
+          Edit
+        </CustomLink>
         <h3>{name}</h3>
         <p>{age}</p>
         <p>{email}</p>

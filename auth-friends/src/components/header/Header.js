@@ -1,11 +1,12 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 
 import Logout from "../logout/logout";
 
 import { CustomLink, CustomLinkContainer } from "../custom-link/link.styles";
 import { HeaderStyles } from "./Header.styles";
 
-const Header = () => {
+const Header = match => {
   const token = localStorage.getItem("token");
 
   const handleSubmit = () => {
@@ -17,11 +18,26 @@ const Header = () => {
     <HeaderStyles>
       <CustomLinkContainer>
         {token ? (
-          <Logout handleSubmit={handleSubmit} />
+          <>
+            {match.location.pathname === "/add-friend" ? (
+              <CustomLink marginTop="0" to="/protected">
+                Back
+              </CustomLink>
+            ) : (
+              <CustomLink marginTop="0" to="/add-friend">
+                Add A Friend
+              </CustomLink>
+            )}
+            <Logout handleSubmit={handleSubmit} />
+          </>
         ) : (
           <>
-            <CustomLink to="/login">Login</CustomLink>
-            <CustomLink to="/signup">Sign Up</CustomLink>
+            <CustomLink marginTop="0" to="/login">
+              Login
+            </CustomLink>
+            <CustomLink marginTop="0" to="/signup">
+              Sign Up
+            </CustomLink>
           </>
         )}
       </CustomLinkContainer>
@@ -29,4 +45,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default withRouter(Header);
