@@ -116,14 +116,14 @@ const EditFriend = ({ state, putFriend, match, deleteFriend }) => {
         <CustomLink to="/protected" background="rgb(0,0,0,.4)">
           Back
         </CustomLink>
-        {/* <CustomLink
+        <CustomLink
           to={match.params.id}
           id={match.params.id}
           onClick={() => deleteFriend(match.params.id)}
           background="rgb(0,0,0,.4)"
         >
           Delete
-        </CustomLink> */}
+        </CustomLink>
       </CustomLinkContainer>
     </div>
   );
