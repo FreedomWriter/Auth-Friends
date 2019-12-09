@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
@@ -8,12 +8,7 @@ import { CustomLink, CustomLinkContainer } from "../custom-link/link.styles";
 import { FriendContainer, CardContent } from "./Friend.styles";
 
 const Friend = ({ friend, match }) => {
-  console.log(`Friend.js: friend.id: `, friend.id);
-  console.log(`Friend.js: match: `, match);
-  // const [localFriendState, setLocalFriendState] = useState("");
-
   const { id, name, age, email, notes } = friend;
-  // useEffect(id => getFriends(id), []);
 
   return (
     <FriendContainer key={id}>
@@ -44,11 +39,8 @@ const Friend = ({ friend, match }) => {
 };
 
 const mapPropsToState = state => {
-  console.log(`Friend.js: mapPropsToState: state: `, state);
   return {
     friends: state.friend.friends
-    // ,
-    // singleFriend: state;
   };
 };
 

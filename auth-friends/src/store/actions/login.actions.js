@@ -6,14 +6,9 @@ export const LOGIN_POST_FAILURE = "LOGIN_POST_FAILURE";
 
 export const postLogin = value => dispatch => {
   dispatch({ type: LOGIN_POST_START, payload: value });
-  console.log(`postFRIEND: `, value);
   axiosWithAuth()
     .post(`/login`, value)
     .then(res => {
-      console.log(
-        `redux: post-actions: axiosWithAuth(): then: res.data: `,
-        res.data
-      );
       dispatch({
         type: LOGIN_POST_SUCCESS,
         payload: res.data.payload
@@ -22,7 +17,6 @@ export const postLogin = value => dispatch => {
       window.location.href = "/protected";
     })
     .catch(err => {
-      console.log(err);
       dispatch({
         type: LOGIN_POST_FAILURE,
         payload: err

@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 
-// import { withRouter } from "react-router-dom";
 import useForm from "react-hook-form";
 import { connect } from "react-redux";
 
@@ -9,15 +8,10 @@ import { postLogin } from "../../store/actions/login.actions";
 import "./login.styles.css";
 
 const LoginForm = ({ postLogin }) => {
-  //   console.log(props);
-  const [localUserName, setLocalUserName] = useState("");
   const { handleSubmit, register, errors } = useForm();
   const onSubmit = values => {
-    console.log(`Login.js: onSubmit: values: `, values);
     postLogin(values);
-    setLocalUserName(values.username);
   };
-  console.log(`username: `, localUserName);
   return (
     <form className="form-container" onSubmit={handleSubmit(onSubmit)}>
       <h3>Log In</h3>

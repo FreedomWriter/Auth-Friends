@@ -1,32 +1,18 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { Link, withRouter } from "react-router-dom";
-import PrivateRoute from "../../PrivateRoute";
+import { withRouter } from "react-router-dom";
 
 import { getFriends, postFriend } from "../../store/actions/friend.actions";
-// import EditFriend from "../edit-friend/EditFriend";
 import Friend from "../friend/Friend.component";
 
-import { CustomLink } from "../custom-link/link.styles";
-
-const FriendsList = ({ getFriends, friends, match }) => {
-  console.log(`FriendsList.js: friends: `, friends);
-  console.log(`FriendsList.js: match: `, match);
-
+const FriendsList = ({ getFriends, friends }) => {
   useEffect(() => {
     getFriends();
   }, []);
 
-  // const handleSubmit = id => {
-  //   console.log(`AddFriend.js: handleSubmit: id: `, id);
-  //   postFriend(id);
-  // };
-
   return (
     <div>
       {friends.map(friend => {
-        // console.log(friend);
-        // const { id, name, age, email, notes } = friend;
         return <Friend key={friend.id} friend={friend} />;
       })}
     </div>
@@ -34,7 +20,6 @@ const FriendsList = ({ getFriends, friends, match }) => {
 };
 
 const mapPropsToState = state => {
-  console.log(`FriendsList.js: mapPropsToState: state: `, state);
   return {
     friends: state.friend.friends
   };

@@ -1,7 +1,6 @@
 import React from "react";
 import useForm from "react-hook-form";
 import { connect } from "react-redux";
-import { CustomLink } from "../custom-link/link.styles";
 
 import { postFriend } from "../../store/actions/friend.actions";
 
@@ -31,7 +30,6 @@ const AddFriend = ({ state, postFriend, history }) => {
         className="input"
         arial-label="name"
         placeholder="Name"
-        id="username"
         id="name"
         name="name"
         ref={register({ required: true })}

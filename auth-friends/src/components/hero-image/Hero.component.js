@@ -73,22 +73,3 @@ function Hero({ location }) {
 }
 
 export default withRouter(Hero);
-
-// (
-//   <>
-//     <CustomLink
-//       background="rgb(20, 20, 20, 0.9)"
-//       fontSize="1.2rem"
-//       to="/login"
-//     >
-//       login
-//     </CustomLink>
-//     <CustomLink
-//       background="rgb(20, 20, 20, 0.9)"
-//       fontSize="1.2rem"
-//       to="/signup"
-//     >
-//       Sign Up
-//     </CustomLink>{" "}
-//   </>
-// )

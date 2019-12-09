@@ -1,7 +1,4 @@
-import styled, { css } from "styled-components";
-
-const media =
-  "only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3)";
+import styled from "styled-components";
 
 export const FriendContainer = styled.div`
   border: 1px solid #d1d1d1;

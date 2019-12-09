@@ -75,18 +75,3 @@ const Header = match => {
 };
 
 export default withRouter(Header);
-
-{
-  /* <>
-{!token && (
-  <>
-    <CustomLink margintop="0" to="/login">
-      Login
-    </CustomLink>
-    <CustomLink margintop="0" to="/Sign Up">
-      Sign Up
-    </CustomLink>
-  </>
-)}
-</> */
-}

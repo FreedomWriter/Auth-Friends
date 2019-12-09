@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import useForm from "react-hook-form";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
@@ -20,11 +20,10 @@ const EditFriend = ({ state, putFriend, match, deleteFriend }) => {
   } = useForm();
 
   const onSubmit = values => {
-    // values !== "" && console.log(values);
     const id = match.params.id;
     console.log(`EditFriend.js: onSubmit: id: `, id);
     for (let v in values) {
-      //   console.log(state.friend[v]);
+      console.log(state.friend[v]);
       if (values[v]) {
         console.log(` v: `, v, `values[v]: `, values[v]);
 
@@ -35,12 +34,8 @@ const EditFriend = ({ state, putFriend, match, deleteFriend }) => {
           },
           id
         );
-        // window.location.href = "/protected";
       }
     }
-    console.log(`EditFriend.js: handleSubmit: id: `, values);
-
-    // putFriend(values);
   };
   return (
     <div className="edit-form-container">
@@ -54,10 +49,6 @@ const EditFriend = ({ state, putFriend, match, deleteFriend }) => {
           ref={register}
         />
         {/* <ErrorMessage error={errors.firstName} /> */}
-
-        {/* <label>Last Name:</label>
-      <input name="lastName" ref={register({ required: true, minLength: 2 })} />
-      <ErrorMessage error={errors.firstName} /> */}
 
         <input
           className="input edit-input"
@@ -85,25 +76,6 @@ const EditFriend = ({ state, putFriend, match, deleteFriend }) => {
           name="notes"
           ref={register}
         />
-        {/* <CustomLinkContainer
-          flexFlow="row nowrap"
-          alignItems="center"
-          justifyContent="space-between"
-        >
-          <CustomLink
-            to={match.params.id}
-            id={match.params.id}
-            onClick={() => {
-              deleteFriend(match.params.id);
-            }}
-            background="rgb(0,0,0,.4)"
-          >
-            Delete
-          </CustomLink>
-          <button disabled={isSubmitting} type="submit">
-            Update
-          </button>
-        </CustomLinkContainer> */}
         <button disabled={isSubmitting} type="submit">
           Update
         </button>

@@ -7,11 +7,9 @@ import { postLogin } from "../../store/actions/login.actions";
 import "./signup.styles.css";
 
 const SignUpForm = props => {
-  console.log(props);
   const [localUserName, setLocalUserName] = useState("");
   const { handleSubmit, register, errors } = useForm();
   const onSubmit = values => {
-    console.log(`Login.js: onSubmit: values: `, values);
     setLocalUserName(values.username);
   };
   console.log(`username: `, localUserName);
