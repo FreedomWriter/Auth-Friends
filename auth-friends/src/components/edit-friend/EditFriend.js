@@ -35,7 +35,7 @@ const EditFriend = ({ state, putFriend, match, deleteFriend }) => {
           },
           id
         );
-        window.location.href = "/protected";
+        // window.location.href = "/protected";
       }
     }
     console.log(`EditFriend.js: handleSubmit: id: `, values);
@@ -85,23 +85,45 @@ const EditFriend = ({ state, putFriend, match, deleteFriend }) => {
           name="notes"
           ref={register}
         />
-
+        {/* <CustomLinkContainer
+          flexFlow="row nowrap"
+          alignItems="center"
+          justifyContent="space-between"
+        >
+          <CustomLink
+            to={match.params.id}
+            id={match.params.id}
+            onClick={() => {
+              deleteFriend(match.params.id);
+            }}
+            background="rgb(0,0,0,.4)"
+          >
+            Delete
+          </CustomLink>
+          <button disabled={isSubmitting} type="submit">
+            Update
+          </button>
+        </CustomLinkContainer> */}
         <button disabled={isSubmitting} type="submit">
           Update
         </button>
       </form>
-      <CustomLinkContainer flexFlow="row nowrap" alignItems="center">
+      <CustomLinkContainer
+        flexFlow="row nowrap"
+        alignItems="center"
+        margintop="8%"
+      >
         <CustomLink to="/protected" background="rgb(0,0,0,.4)">
           Back
         </CustomLink>
-        <CustomLink
+        {/* <CustomLink
           to={match.params.id}
           id={match.params.id}
           onClick={() => deleteFriend(match.params.id)}
           background="rgb(0,0,0,.4)"
         >
           Delete
-        </CustomLink>
+        </CustomLink> */}
       </CustomLinkContainer>
     </div>
   );

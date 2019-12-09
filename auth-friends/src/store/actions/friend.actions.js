@@ -76,6 +76,7 @@ export const putFriend = (value, id) => dispatch => {
         payload: res.data
       });
     })
+    .then(() => (window.location.href = "/protected"))
     .catch(err => {
       console.log(err);
       dispatch({

@@ -17,6 +17,7 @@ const initialState = {
   userName: "",
   password: "",
   friends: [],
+  // notes: '',
   singleFriend: "",
   isLoading: false
 };
@@ -92,7 +93,8 @@ const friendReducer = (state = initialState, action) => {
       );
       return {
         ...state,
-        friends: [action.payload]
+        friends: [...state.friends, action.payload.friends],
+        notes: [action.payload.notes]
       };
     case FRIENDS_PUT_FAILURE:
       console.log(

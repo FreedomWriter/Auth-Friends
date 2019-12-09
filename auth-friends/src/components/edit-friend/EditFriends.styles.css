@@ -59,6 +59,7 @@ button {
   justify-content: center;
   align-items: center;
   align-content: center;
+  border-radius: 0.5rem;
 }
 
 button:hover {

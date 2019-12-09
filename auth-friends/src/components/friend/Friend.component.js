@@ -5,7 +5,7 @@ import { withRouter } from "react-router-dom";
 import { getFriends, postFriend } from "../../store/actions/friend.actions";
 
 import { CustomLink, CustomLinkContainer } from "../custom-link/link.styles";
-import { FriendContainer } from "./Friend.styles";
+import { FriendContainer, CardContent } from "./Friend.styles";
 
 const Friend = ({ friend, match }) => {
   console.log(`Friend.js: friend.id: `, friend.id);
@@ -27,11 +27,12 @@ const Friend = ({ friend, match }) => {
           Edit
         </CustomLink>
       </CustomLinkContainer>
-
-      <h3>{name}</h3>
-      <p>{age}</p>
-      <p>{email}</p>
-      <p>{notes}</p>
+      <CardContent>
+        <h3>{name}</h3>
+        <p>{age}</p>
+        <p>{email}</p>
+        <p>{notes}</p>
+      </CardContent>
     </FriendContainer>
   );
 };
