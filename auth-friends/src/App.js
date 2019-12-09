@@ -11,13 +11,7 @@ import FriendsList from "./components/FriendsList/FriendsList";
 import AddFriend from "./components/add-friend/AddFriend.component";
 import EditFriend from "./components/edit-friend/EditFriend";
 
-// import "./GlobalStyles";
 import { GlobalStyle } from "./GlobalStyles";
-import {
-  CustomLinkContainer,
-  CustomLink
-} from "./components/custom-link/link.styles";
-import M from "minimatch";
 
 function App() {
   const token = localStorage.getItem("token");

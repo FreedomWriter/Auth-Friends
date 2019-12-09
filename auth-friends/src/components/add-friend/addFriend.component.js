@@ -5,7 +5,7 @@ import { CustomLink } from "../custom-link/link.styles";
 
 import { postFriend } from "../../store/actions/friend.actions";
 
-// import CustomButton from "../../custom-button/CustomButton.component";
+import "./AddFriend.styles.css";
 
 const AddFriend = ({ state, postFriend, history }) => {
   console.log(`AddFriend.js: props: `, state);
@@ -21,18 +21,31 @@ const AddFriend = ({ state, postFriend, history }) => {
     postFriend(values);
   };
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form
+      className="form-container add-container"
+      onSubmit={handleSubmit(onSubmit)}
+    >
       <h1>Add A Friend</h1>
-      <label htmlFor="name">Name:</label>
-      <input id="name" name="name" ref={register({ required: true })} />
+
+      <input
+        className="input"
+        arial-label="name"
+        placeholder="Name"
+        id="username"
+        id="name"
+        name="name"
+        ref={register({ required: true })}
+      />
       {/* <ErrorMessage error={errors.firstName} /> */}
 
       {/* <label>Last Name:</label>
       <input name="lastName" ref={register({ required: true, minLength: 2 })} />
       <ErrorMessage error={errors.firstName} /> */}
 
-      <label htmlFor="username">Username</label>
       <input
+        className="input"
+        arial-label="user name"
+        placeholder="User Name"
         id="username"
         name="username"
         // onBlur={e => validateUserName(e.target.value)}
@@ -40,27 +53,39 @@ const AddFriend = ({ state, postFriend, history }) => {
       />
       {/* <ErrorMessage error={errors.username} /> */}
 
-      <label htmlFor="email">Email</label>
       <input
+        className="input"
+        arial-label="email"
+        placeholder="email@email.com"
         id="email"
         name="email"
         ref={register({ required: true, pattern: /^\S+@\S+$/i })}
       />
       {/* <ErrorMessage error={errors.email} /> */}
 
-      <label htmlFor="age">Age</label>
       <input
-        id="age"
-        name="age"
-        type="number"
-        ref={register({ required: true, min: 18 })}
+        className="input"
+        arial-label="Birth Day"
+        placeholder="Birth Day"
+        id="birthday"
+        name="birthday"
+        type="text"
+        ref={register}
       />
       {/* <ErrorMessage error={errors.age} /> */}
 
-      <label htmlFor="notes">Notes</label>
-      <textarea id="notes" name="notes" ref={register} />
+      <textarea
+        className="input"
+        arial-label="Notes"
+        placeholder="Notes"
+        id="notes"
+        name="notes"
+        ref={register}
+      />
 
-      <input disabled={isSubmitting} type="submit" />
+      <button className="btn" disabled={isSubmitting} type="submit">
+        Submit
+      </button>
     </form>
   );
 };

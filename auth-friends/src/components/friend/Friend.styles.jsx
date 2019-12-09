@@ -1,16 +1,19 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+const media =
+  "only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3)";
 
 export const FriendContainer = styled.div`
   border: 1px solid red;
   margin: 5% auto;
-  width: 33vw;
-
+  width: 80vw;
   h3 {
     font-size: 2rem;
+    padding-bottom: 5%;
   }
   p {
     font-size: 1.6rem;
-    margin: 2%;
+    margin: 10%;
   }
 `;
 

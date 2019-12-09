@@ -7,7 +7,6 @@ import { connect } from "react-redux";
 import { postLogin } from "../../store/actions/login.actions";
 
 import "./login.styles.css";
-import { CustomLink } from "../custom-link/link.styles";
 
 const LoginForm = ({ postLogin }) => {
   //   console.log(props);

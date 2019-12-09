@@ -28,10 +28,16 @@ const Friend = ({ friend, match }) => {
         </CustomLink>
       </CustomLinkContainer>
       <CardContent>
-        <h3>{name}</h3>
-        <p>{age}</p>
-        <p>{email}</p>
-        <p>{notes}</p>
+        <>
+          <h3>{name}</h3>
+          <p>Age: {age}</p>
+        </>
+        <>
+          <p>Email: {email}</p>
+        </>
+        <>
+          <p>Reminders: {notes}</p>
+        </>
       </CardContent>
     </FriendContainer>
   );
