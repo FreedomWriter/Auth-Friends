@@ -8,7 +8,7 @@ import Header from "./components/header/Header";
 import LoginForm from "./components/login/Login";
 import SignUpForm from "./components/signup/SignUp";
 import FriendsList from "./components/FriendsList/FriendsList";
-import AddFriend from "./components/add-friend/AddFriend.component";
+import AddFriend from "./components/add-friend/addFriend.component";
 import EditFriend from "./components/edit-friend/EditFriend";
 
 import { GlobalStyle } from "./GlobalStyles";
