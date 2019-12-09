@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { connect } from "react-redux";
 import PrivateRoute from "./PrivateRoute";
@@ -17,18 +17,20 @@ import {
   CustomLinkContainer,
   CustomLink
 } from "./components/custom-link/link.styles";
+import M from "minimatch";
 
 function App() {
-  // console.log(props);
+  const token = localStorage.getItem("token");
+
   return (
     <Router>
       <div>
         <GlobalStyle />
+        {!token ? <MarketingPage /> : <Header />}
         <Switch>
           <Route exact path="/marketing" component={MarketingPage} />
           <Route path="/login" component={LoginForm} />
           <Route path="/signup" component={SignUpForm} />
-          <PrivateRoute path="/" component={Header} />
           <PrivateRoute exact path="/protected" component={FriendsList} />
           <PrivateRoute path="/add-friend" component={AddFriend} />
           <PrivateRoute
@@ -41,11 +43,6 @@ function App() {
   );
 }
 
-const mapPropsToState = state => {
-  return {
-    friends: state.friends
-  };
-};
-export default connect(mapPropsToState)(App);
+export default App;
 
 //i<3Lambd4

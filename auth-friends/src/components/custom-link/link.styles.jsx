@@ -78,7 +78,8 @@ export const CustomLink = styled(Link)`
 `;
 export const CustomLinkContainer = styled.div`
   cursor: ${props => (props.cursor ? props.cursor : "pointer")};
-  margin: ${props => (props.margin ? props.margin : "1rem")};
+  margin: ${props => (props.margin ? props.margin : "0")};
+  margin-top: ${props => props.margintop && props.margintop};
   min-width: ${props => (props.minWidth ? props.minWidth : "150px")};
   min-height: ${props => props.minHeight && props.minWidth};
   height: ${props => props.height && props.height};
