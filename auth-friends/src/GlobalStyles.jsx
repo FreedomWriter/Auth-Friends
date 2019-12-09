@@ -26,7 +26,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-size: 2rem;
   background-color: #4c4c4c;
-  color: #4d4d4d;
+  color: #d1d1d1;
   text-rendering: optimizeLegibility;
   &:hover {
     background-color: #4d4d4d;
