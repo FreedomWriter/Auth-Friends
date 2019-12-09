@@ -55,7 +55,7 @@ const Header = match => {
                 )}
               </>
             )}
-            <>
+            {/* <>
               {match.location.pathname === "/" && (
                 <>
                   <CustomLink margintop="0" to="/login">
@@ -66,7 +66,7 @@ const Header = match => {
                   </CustomLink>
                 </>
               )}
-            </>
+            </> */}
           </>
         )}
       </CustomLinkContainer>
