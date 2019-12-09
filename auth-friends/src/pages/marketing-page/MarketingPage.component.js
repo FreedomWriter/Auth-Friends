@@ -7,7 +7,7 @@ function MarketingPage() {
   return (
     <div>
       <Hero>
-        <Banner title="I'm a title" />
+        <Banner />
       </Hero>
     </div>
   );

@@ -86,7 +86,9 @@ const EditFriend = ({ state, putFriend, match, deleteFriend }) => {
           ref={register}
         />
 
-        <input disabled={isSubmitting} type="submit" />
+        <button disabled={isSubmitting} type="submit">
+          Update
+        </button>
       </form>
       <CustomLinkContainer flexFlow="row nowrap" alignItems="center">
         <CustomLink to="/protected" background="rgb(0,0,0,.4)">

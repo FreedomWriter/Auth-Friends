@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-// import { withRouter } from "react-router-dom";
 import useForm from "react-hook-form";
 import { connect } from "react-redux";
 
 import { postLogin } from "../../store/actions/login.actions";
 
-import "../form-styling/form.styles";
-import { CustomLink } from "../custom-link/link.styles";
+import "./signup.styles.css";
 
 const SignUpForm = props => {
   console.log(props);
@@ -19,7 +17,7 @@ const SignUpForm = props => {
   console.log(`username: `, localUserName);
   return (
     <form className="form-container" onSubmit={handleSubmit(onSubmit)}>
-      <h2>NEED A PUT TO /FRIENDS BEFORE THIS IS FUNCTIONAL</h2>
+      <h2>NEED A PUT TO /login BEFORE THIS IS FUNCTIONAL</h2>
       <input
         className="input"
         aria-label="select user name"
@@ -54,15 +52,11 @@ const SignUpForm = props => {
       />
       {errors.password && errors.password.message}
 
-      <CustomLink type="submit">Submit</CustomLink>
+      <button to="/protected" type="submit">
+        Submit
+      </button>
     </form>
   );
 };
 
-// const mapStateToProps = state => {
-//   console.log(`LogIn.js: mapStateToProps: state: `, state);
-//   return {
-//     state
-//   };
-// };
 export default connect(null, { postLogin })(SignUpForm);
