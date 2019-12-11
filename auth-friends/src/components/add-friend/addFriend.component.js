@@ -32,24 +32,8 @@ const AddFriend = ({ state, postFriend, history }) => {
         placeholder="Name"
         id="name"
         name="name"
-        ref={register({ required: true })}
+        ref={register}
       />
-      {/* <ErrorMessage error={errors.firstName} /> */}
-
-      {/* <label>Last Name:</label>
-      <input name="lastName" ref={register({ required: true, minLength: 2 })} />
-      <ErrorMessage error={errors.firstName} /> */}
-
-      <input
-        className="input"
-        arial-label="user name"
-        placeholder="User Name"
-        id="username"
-        name="username"
-        // onBlur={e => validateUserName(e.target.value)}
-        ref={register({ required: true })}
-      />
-      {/* <ErrorMessage error={errors.username} /> */}
 
       <input
         className="input"
@@ -57,9 +41,8 @@ const AddFriend = ({ state, postFriend, history }) => {
         placeholder="email@email.com"
         id="email"
         name="email"
-        ref={register({ required: true, pattern: /^\S+@\S+$/i })}
+        ref={register}
       />
-      {/* <ErrorMessage error={errors.email} /> */}
 
       <input
         className="input"
@@ -70,7 +53,6 @@ const AddFriend = ({ state, postFriend, history }) => {
         type="text"
         ref={register}
       />
-      {/* <ErrorMessage error={errors.age} /> */}
 
       <textarea
         className="input"

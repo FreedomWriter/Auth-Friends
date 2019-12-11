@@ -24,7 +24,7 @@ const LoginForm = ({ postLogin }) => {
           required: "Required",
           pattern: {
             value: "",
-            message: "Name must be more than one character"
+            message: "Userame must be more than one character"
           }
         })}
       />

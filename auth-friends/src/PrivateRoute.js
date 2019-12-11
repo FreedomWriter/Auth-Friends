@@ -1,13 +1,14 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
+import { connect } from "react-redux";
 
 const PrivateRoute = ({ component: Component, ...theRest }) => {
   return (
     <Route
       {...theRest}
-      render={() => {
+      render={props => {
         if (localStorage.getItem("token")) {
-          return <Component />;
+          return <Component isLoading={props.isLoading} />;
         } else {
           console.log(
             "Privateroute.js: Privateroute: Route.render: redirecting!"
@@ -18,5 +19,9 @@ const PrivateRoute = ({ component: Component, ...theRest }) => {
     />
   );
 };
-
-export default PrivateRoute;
+const mapPropsToState = state => {
+  return {
+    isLoading: state.isLoading
+  };
+};
+export default connect(mapPropsToState)(PrivateRoute);

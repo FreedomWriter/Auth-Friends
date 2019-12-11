@@ -9,7 +9,7 @@ import { CustomLink, CustomLinkContainer } from "../custom-link/link.styles";
 import "../login/login.styles.css";
 import "./EditFriends.styles.css";
 
-const EditFriend = ({ state, putFriend, match, deleteFriend }) => {
+const EditFriend = ({ state, putFriend, match, deleteFriend, isLoading }) => {
   console.log(`EditFriend.js: state: `, state);
 
   const {
@@ -21,12 +21,8 @@ const EditFriend = ({ state, putFriend, match, deleteFriend }) => {
 
   const onSubmit = values => {
     const id = match.params.id;
-    console.log(`EditFriend.js: onSubmit: id: `, id);
     for (let v in values) {
-      console.log(state.friend[v]);
       if (values[v]) {
-        console.log(` v: `, v, `values[v]: `, values[v]);
-
         putFriend(
           {
             [v]: values[v],
@@ -103,7 +99,8 @@ const EditFriend = ({ state, putFriend, match, deleteFriend }) => {
 const mapStateToProps = state => {
   console.log(`EditFriend.js: mapStateToProps: state: `, state);
   return {
-    friends: state.friends
+    friends: state.friends,
+    isLoading: state.isLoading
   };
 };
 export default connect(mapStateToProps, {
