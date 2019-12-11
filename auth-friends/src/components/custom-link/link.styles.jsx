@@ -14,7 +14,7 @@ export const CustomLink = styled(Link)`
   /* font */
   text-decoration: ${props =>
     props.textDecoration ? props.textDecoration : "none"};
-  font-size: ${props => (props.fontSize ? props.fontSize : "700")};
+  font-size: ${props => props.fontSize && props.fontSize};
   font-weight: ${props => (props.fontWeight ? props.fontWeight : "700")};
   letter-spacing: ${props =>
     props.letterSpacing ? props.fontWeight : "1.5px"};
@@ -39,7 +39,7 @@ export const CustomLink = styled(Link)`
   margin-right: ${props => props.marginRight && props.marginRight};
   margin-left: ${props => props.marginLeft && props.marginLeft};
   /* padding */
-  padding: ${props => props.padding && props.padding};
+  padding: ${props => props.paddingAll && props.paddingAll};
   padding-top: ${props => props.paddingTop && props.paddingTop};
   padding-bottom: ${props => props.paddingBottom && props.paddingBottom};
   padding-right: ${props => props.paddingRight && props.paddingRight};

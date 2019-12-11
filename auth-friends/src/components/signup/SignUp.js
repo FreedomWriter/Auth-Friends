@@ -15,7 +15,7 @@ const SignUpForm = props => {
   console.log(`username: `, localUserName);
   return (
     <form className="form-container" onSubmit={handleSubmit(onSubmit)}>
-      <h2>NEED A PUT TO /login BEFORE THIS IS FUNCTIONAL</h2>
+      <p>NOT FUNCTIONAL</p>
       <input
         className="input"
         aria-label="select user name"

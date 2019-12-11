@@ -10,7 +10,7 @@ import FriendsList from "./components/FriendsList/FriendsList";
 import AddFriend from "./components/add-friend/addFriend.component";
 import EditFriend from "./components/edit-friend/EditFriend";
 
-import { GlobalStyle } from "./GlobalStyles";
+import { Globals } from "./globals/GlobalStyles";
 
 function App() {
   const token = localStorage.getItem("token");
@@ -18,7 +18,7 @@ function App() {
   return (
     <Router>
       <div>
-        <GlobalStyle />
+        <Globals />
         {!token ? <MarketingPage /> : <Header />}
         <Switch>
           <Route exact path="/marketing" component={MarketingPage} />

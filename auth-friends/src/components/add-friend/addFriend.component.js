@@ -24,7 +24,7 @@ const AddFriend = ({ state, postFriend, history }) => {
       className="form-container add-container"
       onSubmit={handleSubmit(onSubmit)}
     >
-      <h1>Add A Friend</h1>
+      <h5>New Friend</h5>
 
       <input
         className="input"

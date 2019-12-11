@@ -81,12 +81,19 @@ const EditFriend = ({ state, putFriend, match, deleteFriend, isLoading }) => {
         alignItems="center"
         margintop="8%"
       >
-        <CustomLink to="/protected" background="rgb(0,0,0,.4)">
+        <CustomLink
+          to="/protected"
+          paddingAll="1.5rem"
+          width="150px"
+          background="rgb(0,0,0,.4)"
+        >
           Back
         </CustomLink>
         <CustomLink
           to={match.params.id}
           id={match.params.id}
+          paddingAll="1.5rem"
+          width="150px"
           onClick={() => deleteFriend(match.params.id)}
           background="rgb(0,0,0,.4)"
         >

@@ -8,7 +8,8 @@ export const HeaderStyles = styled.header`
   width: 100%;
   background: rgb(0, 0, 0, 0.8);
   transition: all 0.2s ease-in-out;
+  font-size: 0.5rem;
   h1 {
-    color: #fff;
+    /* color: #fff; */
   }
 `;

@@ -5,11 +5,10 @@ export const FriendContainer = styled.div`
   margin: 5% auto;
   width: 80vw;
   h3 {
-    font-size: 2rem;
     padding: 5%;
   }
   p {
-    font-size: 1.6rem;
+    /* font-size: 1.6rem; */
     margin: 10%;
   }
 `;

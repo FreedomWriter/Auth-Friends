@@ -14,8 +14,7 @@ const Friend = ({ friend, match }) => {
     <FriendContainer key={id}>
       <CustomLinkContainer alignSelf="flex-start">
         <CustomLink
-          height="25px"
-          width="45px"
+          paddingAll="1.5rem"
           background="rgb(0, 0, 0, 0.6)"
           to={`${match.path}/edit-friend/${id}`}
         >
