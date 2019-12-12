@@ -1,10 +1,51 @@
+import { css } from "styled-components";
+
 export const setColor = {
   primaryColor: "#d1d1d1",
   background: "#4d4d4d",
   mainLight: "#d1d1d1",
-  mainBlack: "#222"
+  mainBlack: "#222",
+  gray: "#4d4d4d"
 };
 
 export const setFont = {
   main: "font-family: 'Montserrat', sans-serif;"
+};
+
+export const setRem = (number = 16) => {
+  return `${number / 16}rem`;
+};
+
+export const setLetterSpacing = (number = 2) => {
+  return `letter-spacing:${number}px`;
+};
+
+export const setShadow = {
+  light: "box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75)",
+  dark: "box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);",
+  darkest: "box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);"
+};
+
+const sizes = {
+  large: 1200,
+  desktop: 990,
+  tablet: 800,
+  phone: 500
+};
+
+export const media = Object.keys(sizes).reduce((acc, label) => {
+  acc[label] = (...args) => css`
+    @media (min-width: ${sizes[label] / 16}em) {
+      ${css(...args)}
+    }
+  `;
+  return acc;
+}, {});
+
+export const setTransition = ({
+  property = "all",
+  time = "0.3s",
+  timing = "ease-in-out"
+} = {}) => {
+  return `transition:${property} ${time} ${timing}`;
 };

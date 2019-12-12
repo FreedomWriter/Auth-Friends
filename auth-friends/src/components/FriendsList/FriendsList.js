@@ -4,6 +4,7 @@ import { withRouter } from "react-router-dom";
 
 import { getFriends, postFriend } from "../../store/actions/friend.actions";
 import Friend from "../friend/Friend.component";
+import { Title, Section, CardCenter } from "./FriendsList.styles";
 
 const FriendsList = ({ getFriends, friends, isLoading }) => {
   useEffect(() => {
@@ -15,11 +16,16 @@ const FriendsList = ({ getFriends, friends, isLoading }) => {
   }, []);
 
   return (
-    <div>
-      {friends.map(friend => {
-        return <Friend key={friend.id} isLoading={isLoading} friend={friend} />;
-      })}
-    </div>
+    <Section>
+      <Title title="Friends" center />
+      <CardCenter>
+        {friends.map(friend => {
+          return (
+            <Friend key={friend.id} isLoading={isLoading} friend={friend} />
+          );
+        })}
+      </CardCenter>
+    </Section>
   );
 };
 
