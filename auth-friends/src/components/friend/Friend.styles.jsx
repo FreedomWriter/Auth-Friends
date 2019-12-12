@@ -55,12 +55,3 @@ export const Card = styled.div`
     font-size: 1rem;
   }
 `;
-
-// Friend.propTypes = {
-//   friend: PropTypes.shape({
-//     img: PropTypes.string.isRequired,
-//     title: PropTypes.string.isRequired,
-//     info: PropTypes.string.isRequired,
-//     otherInfo: PropTypes.string.isRequired
-//   })
-// };

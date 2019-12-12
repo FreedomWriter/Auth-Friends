@@ -1,6 +1,6 @@
 import React from "react";
 
-import { BannerWrapper } from "./banner.styles";
+import BannerWrapper from "./banner.styles";
 
 function Banner({ title, children, ...props }) {
   return (

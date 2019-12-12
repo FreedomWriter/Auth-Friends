@@ -24,7 +24,7 @@ const Friend = ({ friend, match }) => {
       <Card>
         <>
           <h3>{name}</h3>
-          <p>Age: {age}</p>
+          <p>Favorite Number: {age}</p>
         </>
         <>
           <p>Email: {email}</p>

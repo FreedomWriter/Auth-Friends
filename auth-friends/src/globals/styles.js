@@ -1,5 +1,17 @@
 import { css } from "styled-components";
 
+export const setFlex = ({ x = "center", y = "center" } = {}) => {
+  return `display:flex;align-items:${y};justify-content:${x}`;
+};
+
+export const setBackground = ({
+  img = "https://images.pexels.com/photos/1628086/pexels-photo-1628086.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+  color = "rgba(0,0,0,0)"
+} = {}) => {
+  return `background: linear-gradient(${color}, ${color}),
+    url(${img}) center/cover fixed no-repeat`;
+};
+
 export const setColor = {
   primaryColor: "#d1d1d1",
   background: "#4d4d4d",
@@ -24,6 +36,13 @@ export const setShadow = {
   light: "box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75)",
   dark: "box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);",
   darkest: "box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);"
+};
+export const setBorder = ({
+  width = "1px",
+  style = "solid",
+  color = "black"
+} = {}) => {
+  return `border:${width} ${style} ${color}`;
 };
 
 const sizes = {
