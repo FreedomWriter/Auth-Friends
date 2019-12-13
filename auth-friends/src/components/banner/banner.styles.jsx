@@ -52,7 +52,7 @@ const BannerWrapper = styled(Banner)`
   h1 {
     text-transform: capitalize;
     font-size: ${setRem(48)};
-    color: ${setColor.gray};
+    color: hotpink;
     span {
       color: ${setColor.mainLight};
     }
