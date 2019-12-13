@@ -32,7 +32,7 @@ const Banner = ({ className, title, text, children, greeting }) => {
   return (
     <div className={className}>
       <h1>
-        Finding Family <span>With Friends</span>{" "}
+        Family <span>And Friends</span>{" "}
       </h1>
       <div className="info">
         <p>{text}</p>
@@ -52,9 +52,9 @@ const BannerWrapper = styled(Banner)`
   h1 {
     text-transform: capitalize;
     font-size: ${setRem(48)};
-    color: ${setColor.primaryColor};
+    color: ${setColor.gray};
     span {
-      color: ${setColor.mainWhite};
+      color: ${setColor.mainLight};
     }
   }
   p {
