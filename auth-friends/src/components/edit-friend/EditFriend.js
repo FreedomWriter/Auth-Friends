@@ -76,7 +76,7 @@ const EditFriend = ({
           aria-label="birthday"
           placeholder="birthday"
           name="Birthday"
-          type="number"
+          type="date"
           ref={register({ min: 18 })}
         />
         {/* <ErrorMessage error={errors.age} /> */}
