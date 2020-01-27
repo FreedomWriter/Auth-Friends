@@ -2,6 +2,9 @@ import {
   FRIENDS_LOAD_START,
   FRIENDS_LOAD_SUCCESS,
   FRIENDS_LOAD_FAILURE,
+  FRIEND_LOAD_START,
+  FRIEND_LOAD_SUCCESS,
+  FRIEND_LOAD_FAILURE,
   FRIENDS_POST_START,
   FRIENDS_POST_SUCCESS,
   FRIENDS_POST_FAILURE,
@@ -18,7 +21,7 @@ const initialState = {
   password: "",
   friends: [],
   // notes: '',
-  singleFriend: "",
+  singleFriend: {},
   isLoading: false
 };
 
@@ -36,6 +39,23 @@ const friendReducer = (state = initialState, action) => {
         isLoading: false
       };
     case FRIENDS_LOAD_FAILURE:
+      return {
+        ...state,
+        error: action.payload,
+        isLoading: false
+      };
+    case FRIEND_LOAD_START:
+      return {
+        ...state,
+        isLoading: true
+      };
+    case FRIEND_LOAD_SUCCESS:
+      return {
+        ...state,
+        singleFriend: action.payload,
+        isLoading: false
+      };
+    case FRIEND_LOAD_FAILURE:
       return {
         ...state,
         error: action.payload,

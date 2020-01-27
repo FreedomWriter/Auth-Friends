@@ -4,6 +4,10 @@ export const FRIENDS_LOAD_START = "FRIENDS_LOAD_START";
 export const FRIENDS_LOAD_SUCCESS = "FRIENDS_LOAD_SUCCESS";
 export const FRIENDS_LOAD_FAILURE = "FRIENDS_LOAD_FAILURE";
 
+export const FRIEND_LOAD_START = "FRIEND_LOAD_START";
+export const FRIEND_LOAD_SUCCESS = "FRIEND_LOAD_SUCCESS";
+export const FRIEND_LOAD_FAILURE = "FRIEND_LOAD_FAILURE";
+
 export const FRIENDS_POST_START = "FRIENDS_POST_START";
 export const FRIENDS_POST_SUCCESS = "FRIENDS_POST_SUCCESS";
 export const FRIENDS_POST_FAILURE = "FRIENDS_POST_FAILURE";
@@ -30,6 +34,24 @@ export const getFriends = () => dispatch => {
       dispatch({
         type: FRIENDS_LOAD_FAILURE,
         payload: "error loading friends"
+      });
+    });
+};
+
+export const getFriend = id => dispatch => {
+  dispatch({ type: FRIEND_LOAD_START });
+  axiosWithAuth()
+    .get(`/friends/${id}`)
+    .then(res => {
+      dispatch({
+        type: FRIEND_LOAD_SUCCESS,
+        payload: res.data
+      });
+    })
+    .catch(err => {
+      dispatch({
+        type: FRIEND_LOAD_FAILURE,
+        payload: err
       });
     });
 };

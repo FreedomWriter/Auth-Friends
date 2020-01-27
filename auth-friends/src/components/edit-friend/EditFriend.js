@@ -1,16 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 import useForm from "react-hook-form";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
-import { putFriend, deleteFriend } from "../../store/actions/friend.actions";
+import {
+  putFriend,
+  deleteFriend,
+  getFriend
+} from "../../store/actions/friend.actions";
 
 import { CustomLink, CustomLinkContainer } from "../custom-link/link.styles";
 import "../login/login.styles.css";
 import "./EditFriends.styles.css";
 
-const EditFriend = ({ state, putFriend, match, deleteFriend, isLoading }) => {
-  console.log(`EditFriend.js: state: `, state);
+const EditFriend = ({
+  state,
+  putFriend,
+  match,
+  deleteFriend,
+  getFriend,
+  isLoading,
+  singleFriend
+}) => {
+  console.log(`EditFriend.js: state: `, singleFriend);
+
+  useEffect(() => {
+    getFriend(match.params.id);
+  }, []);
 
   const {
     register,
@@ -40,7 +56,7 @@ const EditFriend = ({ state, putFriend, match, deleteFriend, isLoading }) => {
         <input
           className="input edit-input"
           aria-label="name"
-          placeholder="name"
+          placeholder={singleFriend.name}
           name="name"
           ref={register}
         />
@@ -50,7 +66,7 @@ const EditFriend = ({ state, putFriend, match, deleteFriend, isLoading }) => {
           className="input edit-input"
           aria-label="email"
           name="email"
-          placeholder="email@email.com"
+          placeholder={singleFriend.email}
           ref={register({ pattern: /^\S+@\S+$/i })}
         />
         {/* <ErrorMessage error={errors.email} /> */}
@@ -106,11 +122,13 @@ const EditFriend = ({ state, putFriend, match, deleteFriend, isLoading }) => {
 const mapStateToProps = state => {
   console.log(`EditFriend.js: mapStateToProps: state: `, state);
   return {
-    friends: state.friends,
-    isLoading: state.isLoading
+    friends: state.friend,
+    isLoading: state.isLoading,
+    singleFriend: state.friend.singleFriend
   };
 };
 export default connect(mapStateToProps, {
   putFriend,
-  deleteFriend
+  deleteFriend,
+  getFriend
 })(withRouter(EditFriend));
