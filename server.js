@@ -14,7 +14,7 @@ let friends = [
   {
     id: 1,
     name: "Ronnie",
-    birthday: Date(),
+    birthday: "",
     email: "ronnie@ronniemail.com",
     phoneNumber: 7737737733,
     notes: "...make notes here"
