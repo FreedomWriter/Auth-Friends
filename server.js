@@ -8,54 +8,38 @@ const token =
 
 console.log(process.env);
 
-let nextId = 7;
+let nextId = 5;
 
 let friends = [
   {
     id: 1,
-    name: "Ben",
+    name: "Ronnie",
     birthday: "",
-    email: "ben@lambdaschool.com",
+    email: "ronnie@ronniemail.com",
     phoneNumber: 7737737733,
     notes: "...make notes here"
   },
   {
     id: 2,
-    name: "Austen",
+    name: "Bobby",
     birthday: "",
-    email: "austen@lambdaschool.com",
+    email: "bobby@bobbymail.com",
     phoneNumber: 7737737733,
     notes: "...make notes here"
   },
   {
     id: 3,
-    name: "Ryan",
+    name: "Ricky",
     birthday: "",
-    email: "ryan@lambdaschool.com",
+    email: "ricky@rickymail.com",
     phoneNumber: 7737737733,
     notes: "...make notes here"
   },
   {
     id: 4,
-    name: "Dustin",
+    name: "Mike",
     birthday: "",
-    email: "D-munny@lambdaschool.com",
-    phoneNumber: 7737737733,
-    notes: "...make notes here"
-  },
-  {
-    id: 5,
-    name: "Sean",
-    birthday: "",
-    email: "sean@lambdaschool.com",
-    phoneNumber: 7737737733,
-    notes: "...make notes here"
-  },
-  {
-    id: 6,
-    name: "Michelle",
-    birthday: "",
-    email: "michelle@gmail.com",
+    email: "mike@mikemail.com",
     phoneNumber: 7737737733,
     notes: "...make notes here"
   }

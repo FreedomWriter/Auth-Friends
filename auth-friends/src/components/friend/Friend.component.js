@@ -8,7 +8,7 @@ import { CustomLink, CustomLinkContainer } from "../custom-link/link.styles";
 import { FriendContainer, Card } from "./Friend.styles";
 
 const Friend = ({ friend, match }) => {
-  const { id, name, age, email, notes } = friend;
+  const { id, name, birthday, email, notes, phoneNumber } = friend;
 
   return (
     <FriendContainer key={id}>
@@ -24,13 +24,16 @@ const Friend = ({ friend, match }) => {
       <Card>
         <>
           <h3>{name}</h3>
-          <p>Favorite Number: {age}</p>
+          <p>Birthday: {birthday}</p>
         </>
         <>
           <p>Email: {email}</p>
         </>
         <>
-          <p>Reminders: {notes}</p>
+          <p>Phone Number: {phoneNumber}</p>
+        </>
+        <>
+          <p>Notes: {notes}</p>
         </>
       </Card>
     </FriendContainer>
