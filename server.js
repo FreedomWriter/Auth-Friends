@@ -14,38 +14,44 @@ let friends = [
   {
     id: 1,
     name: "Ben",
-    age: 30,
-    email: "ben@lambdaschool.com"
+    birthday: "",
+    email: "ben@lambdaschool.com",
+    notes: "...make notes here"
   },
   {
     id: 2,
     name: "Austen",
-    age: 45,
-    email: "austen@lambdaschool.com"
+    birthday: "",
+    email: "austen@lambdaschool.com",
+    notes: "...make notes here"
   },
   {
     id: 3,
     name: "Ryan",
-    age: 15,
-    email: "ryan@lambdaschool.com"
+    birthday: "",
+    email: "ryan@lambdaschool.com",
+    notes: "...make notes here"
   },
   {
     id: 4,
     name: "Dustin",
-    age: 25,
-    email: "D-munny@lambdaschool.com"
+    birthday: "",
+    email: "D-munny@lambdaschool.com",
+    notes: "...make notes here"
   },
   {
     id: 5,
     name: "Sean",
-    age: 35,
-    email: "sean@lambdaschool.com"
+    birthday: "",
+    email: "sean@lambdaschool.com",
+    notes: "...make notes here"
   },
   {
     id: 6,
     name: "Michelle",
-    age: 67,
-    email: "michelle@gmail.com"
+    birthday: "",
+    email: "michelle@gmail.com",
+    notes: "...make notes here"
   }
 ];
 
