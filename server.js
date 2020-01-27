@@ -16,6 +16,7 @@ let friends = [
     name: "Ben",
     birthday: "",
     email: "ben@lambdaschool.com",
+    phoneNumber: 7737737733,
     notes: "...make notes here"
   },
   {
@@ -23,6 +24,7 @@ let friends = [
     name: "Austen",
     birthday: "",
     email: "austen@lambdaschool.com",
+    phoneNumber: 7737737733,
     notes: "...make notes here"
   },
   {
@@ -30,6 +32,7 @@ let friends = [
     name: "Ryan",
     birthday: "",
     email: "ryan@lambdaschool.com",
+    phoneNumber: 7737737733,
     notes: "...make notes here"
   },
   {
@@ -37,6 +40,7 @@ let friends = [
     name: "Dustin",
     birthday: "",
     email: "D-munny@lambdaschool.com",
+    phoneNumber: 7737737733,
     notes: "...make notes here"
   },
   {
@@ -44,6 +48,7 @@ let friends = [
     name: "Sean",
     birthday: "",
     email: "sean@lambdaschool.com",
+    phoneNumber: 7737737733,
     notes: "...make notes here"
   },
   {
@@ -51,6 +56,7 @@ let friends = [
     name: "Michelle",
     birthday: "",
     email: "michelle@gmail.com",
+    phoneNumber: 7737737733,
     notes: "...make notes here"
   }
 ];
